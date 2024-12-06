@@ -1,0 +1,8 @@
+# nextjs folder
+node_modules/
+.next/
+target/
+build/
+
+#node
+node/
