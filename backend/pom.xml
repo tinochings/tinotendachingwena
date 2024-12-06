@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>tinotendachingwena.website</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>tinotenda</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Tinotenda Chingwena Website Server</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Tinotenda Chingwenas website</description>
     <url/>
     <licenses>
         <license/>
