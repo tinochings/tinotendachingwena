@@ -1,7 +1,9 @@
-"use client"
+"use client";
 import localFont from "next/font/local";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import NavigationBar from "@/utilities/components/navigation/NavigationBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,6 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <NavigationBar/>
         {children}
       </body>
     </html>
