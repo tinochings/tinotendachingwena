@@ -1,4 +1,4 @@
-import { Container, NavbarBrand } from "react-bootstrap";
+import { Col, Container, NavbarBrand, Row } from "react-bootstrap";
 
 export default function NavigationBar() {
 
@@ -57,3 +57,33 @@ export default function NavigationBar() {
         </header>
     );
 };
+
+export function Footer() {
+    return (
+        <footer>
+            <Container>
+                <Row className="footer-row-cont">
+                    <Col>
+                        <Row>
+                            <Col id="footer-img-div">
+                                <img className="giraffe" src="/miscellaneous/giraffe.svg" alt="Giraffe" />
+                            </Col>
+                            <Col>
+                                <img className="giraffe" src="/miscellaneous/giraffe_reverse.svg" alt="Giraffe" />
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col className="vertical-centre flex-column">
+                        <p id="footer-salutation">Your identity is what defines you. Like my ancestors, my goal is to grow and exceed
+                            above and beyond, like my totem
+                            the giraffe. Learning and growing one step at a time.
+                        </p>
+                        <p>
+                            Nhari Unendoro
+                        </p>
+                    </Col>
+                </Row>
+            </Container>
+        </footer>
+    )
+}
