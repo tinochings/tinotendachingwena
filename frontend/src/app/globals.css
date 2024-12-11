@@ -57,6 +57,7 @@ a {
 .linkimg {
   height: 52px;
   width: 52px;
+  padding: 5px;
 }
 .a {
   color: #533621;
@@ -88,6 +89,7 @@ a {
 .dropdown-item span{
   font-size: 20px;
   text-align: center;
+  padding: 5px;
 }
 .navbar,
 .navbar-menu,
