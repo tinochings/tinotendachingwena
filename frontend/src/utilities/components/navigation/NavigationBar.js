@@ -23,9 +23,6 @@ export default function NavigationBar() {
                             <li className="nav-item li">
                                 <a className="menu-item vertical-centre a" title="Navigate to request Tinotenda's services" href="/services">Services</a>
                             </li>
-                            <li className="nav-item li">
-                                <a className="menu-item vertical-centre a" title="Change language to Zezuru" href="/sn/" id="language">Zezuru</a>
-                            </li>
                             <li className="nav-item li dropdown">
                                 <a className="menu-item vertical-centre dropdown-toggle a" title="Click to bring out socials container" href="#"
                                     role="button" id="socialsMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +46,9 @@ export default function NavigationBar() {
                                         <span>Github</span>
                                     </a>
                                 </div>
+                            </li>
+                            <li className="nav-item li">
+                                <a className="menu-item vertical-centre a" title="Change language to Zezuru" href="/sn/" id="language">Zezuru</a>
                             </li>
                         </ul>
                     </div>
