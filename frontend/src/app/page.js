@@ -1,95 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { Row, Col } from "react-bootstrap";
+import homePageStyle from './homepage.module.css';
+import MetaData from "@/utilities/components/MetaData";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+    <MetaData title={"Title"}></MetaData>
+      <IntroductionSection />
+    </>
+  );
+}
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+function IntroductionSection() {
+  return (
+    <section id={`${homePageStyle.introduction}`} className="container">
+      <Row className={`${homePageStyle.introductionRow}`}>
+        <Col id="aboutmetext">
+          <main>
+            <h1 id={`${homePageStyle.fullname}`}>TINOTENDA CHINGWENA</h1>
+            <h2 id={`${homePageStyle.developer}`}>Software Developer</h2>
+            <div id={`${homePageStyle.statement}`}>
+              <p>Tinotenda Chingwena, connecting Zimbabwe to the world with first class software services</p>
+            </div>
+            <p>I am an innovative software developer looking to get involved in technological projects that strongly impact
+              people. I am looking to make positive changes for people through technological advancements with the skills I
+              have obtained throughout my degree and software experience. I offer tailor made software services from the
+              ground up. I make Android applications, websites, web apps, together with the secure servers. I have a
+              published Android application on the Google Play Store called Madzinza, and I have also published an open
+              source Android application on Github called Poets Kingdom. I have created websites for Trin Media, Zvevatsunga
+              Steel & Plumbing, and Tinotenda Chingwena. I am highly skilled and offer software services with pristine
+              expertise. Each piece of software is built precisely for you. <br></br>
+            </p>
+          </main>
+        </Col>
+        <Col className={`${homePageStyle.personalImageCont}`}>
+        <img id={`${homePageStyle.personalimage}`} src="/socialMedia/personalphotodupe.png" alt="Photo of Tinotenda Chingwena"></img>
+        </Col>
+      </Row>
+    </section>
   );
 }

@@ -44,6 +44,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* navigation*/
 .ul {
   padding: 0px;
   list-style: none;
@@ -110,6 +111,52 @@ a {
 .services a:hover {
   background-color: var(--text_color);
   color: white;
+}
+footer {
+  position: relative;
+  text-align: center;
+  margin-top: 60px;
+}
+footer p {
+  font-weight: bold;
+  height: inherit;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+#footer-salutation {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.giraffe {
+  width: 100%;
+  max-width: 256px;
+  max-height: 256px;
+}
+
+footer .col {
+  text-align: left;
+  height: inherit;
+}
+
+#footer-img-div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Mobile Design */
+@media screen and (max-width: 1000px) {
+}
+@media screen and (max-width: 768px) {  
+    .footer-row-cont {
+      flex-direction: column;
+    }
+  
 }
 @media screen and (max-width: 767px) {
   .li {

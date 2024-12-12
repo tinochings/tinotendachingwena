@@ -1,0 +1,30 @@
+/* introduction section */
+#fullname {
+  font-weight: bold;
+}
+
+#developer {
+  font-style: italic;
+}
+
+#statement {
+  display: flex;
+  justify-content: left;
+}
+
+/* Mobile Design */
+@media screen and (max-width: 1000px) {
+  .personalImageCont {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .introductionRow{
+    display: grid;
+    grid-template-columns: 100%;
+  } 
+  #personalimage {
+    width: 100%;
+  }
+}
