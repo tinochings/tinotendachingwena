@@ -23,9 +23,8 @@ export default function NavigationBar() {
                             <Nav.Item as="li" className="li">
                                 <Nav.Link className="menu-item vertical-centre a" title="Navigate to request Tinotenda's services" href="/services">Services</Nav.Link>
                             </Nav.Item>
-                            <Nav.Item as="li" className="li">
-                                <Dropdown className="menu-item a vertical-centre">
-                                    <Dropdown.Toggle title="Click to bring out socials container" id="socialsMenuLink" as="a" href="#">
+                                <Dropdown as="li" className="li">
+                                    <Dropdown.Toggle title="Click to bring out socials container" className="menu-item a vertical-centre" id="socialsMenuLink" as="a" href="#">
                                         Socials
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
@@ -44,7 +43,6 @@ export default function NavigationBar() {
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
-                            </Nav.Item>
                             <Nav.Item as="li" className="li">
                                 <Nav.Link className="menu-item vertical-centre a" title="Change language to Zezuru" href="/sn/" id="language">Zezuru</Nav.Link>
                             </Nav.Item>
