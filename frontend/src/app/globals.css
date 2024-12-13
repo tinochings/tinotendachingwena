@@ -49,7 +49,7 @@ a {
   padding: 0px;
   list-style: none;
 }
-#logo {
+#logo, .fabars {
   height: 70px;
 }
 #logo:hover {
