@@ -1,4 +1,9 @@
 /* introduction section */
+#aboutmetext{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #fullname {
   font-weight: bold;
 }
@@ -11,7 +16,74 @@
   display: flex;
   justify-content: left;
 }
-
+.logoParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 150px;
+  width: 150px;
+}
+.logoParent div:first-child{
+  height: 100px;
+  display: flex;
+  min-height: 100px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logoParent div:nth-child(2){
+  height: 70px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.logoParent img{
+  height: auto;
+  max-height: 100%;
+  width: 100px;
+}
+.logoParent span {
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+#gridCont{
+  display: grid;
+  grid-auto-columns: 100px;
+  row-gap: 25px;
+  column-gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+  grid-template-rows: repeat(3, auto);
+}
+#aboutme {
+  margin-top: var(--margin_top_val);
+  border-radius: 15px;
+}
+.engineeringCont, .engineeringLogos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  flex-wrap: wrap;
+}
+.engineeringCont{
+  margin-top: var(--margin_top_val);
+  flex-direction: column;
+}
+.engineeringLogos{
+  margin-top: var(--margin_top_val);
+  width: 100%;
+  gap: 50px;
+  flex-direction: row;
+}
 /* Mobile Design */
 @media screen and (max-width: 1000px) {
   .personalImageCont {
