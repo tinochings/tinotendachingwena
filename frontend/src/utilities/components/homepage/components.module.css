@@ -1,0 +1,81 @@
+.marginTop {
+    margin-top: 35px;
+}
+.cvItemHeaderCont{
+    display: flex;
+    flex-direction: column;
+}
+
+.cvItemCont{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    column-gap: 30px;
+}
+.cvItemColumn1{
+    grid-column: 1 / 1;
+    grid-row: 1;
+}
+.cvItemColumn2{
+    grid-column: 2 / 2;
+}
+.cvItemHeaderCont span:first-child{
+    font-size: 1.1em;
+    font-weight: 900;
+}
+.cvItemHeaderCont span:nth-child(2){
+    font-size: 1em;
+    font-weight: 600;
+}
+.cvItemDescriptionCont, .cvItemUrlCont, .cvItemSkillsCont{
+    margin-top: var(--cv_margin_top_val);
+}
+.cvItemDescriptionCont{
+    margin-bottom: 0px !important;
+}
+
+.cvItemSkillsUl{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    padding-left: 0px;
+}
+.cvItemSkillsListItem{
+    background-color: var(--text_color);
+    border-radius: 25px;
+}
+.cvItemLinkListItem, .cvItemSkillsListItem{
+    padding: 7px;
+}
+.cvItemSkillsListItem span{
+    padding: 15px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .cvItemCont{
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        column-gap: 0px;
+        row-gap: 15px;
+    }
+    .cvItemColumn1{
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+    }
+    .cvItemColumn2{
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
+    }
+    .cvItemSkillsListItem span{
+        padding: 5px;
+        font-size: 14px;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cvItemDescriptionCont p{
+        font-size: 16px;
+    }
+}

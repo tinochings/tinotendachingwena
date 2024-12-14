@@ -5,6 +5,7 @@
   --text_color: #533621;
   --container_color: #fff;
   --margin_top_val: 25px;
+  --cv_margin_top_val: 15px
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +29,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+section{
+  margin-top: var(--margin_top_val);
+}
+
 * {
   font-family: 'Helvetica', sans-serif;
   color: var(--text_color);
@@ -44,10 +49,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
+p {
+  margin-bottom: 0px;
+}
 /* navigation*/
 .ul {
   padding: 0px;
+}
+ul {
   list-style: none;
+  /* padding: 0px; */
 }
 #logo, .fabars {
   height: 70px;

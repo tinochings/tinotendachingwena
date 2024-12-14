@@ -2,7 +2,6 @@
 #aboutmetext{
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 #fullname {
   font-weight: bold;
@@ -11,7 +10,20 @@
 #developer {
   font-style: italic;
 }
-
+#personalimage {
+  border-radius: 50%;
+  border-color: var(--text_color);
+  border-width: 5px;
+  border-style: solid;
+  height: 200px;
+  width: auto;
+}
+#personalImageCont {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
 #statement {
   display: flex;
   justify-content: left;
@@ -33,7 +45,7 @@
   align-items: center;
 }
 .logoParent div:nth-child(2){
-  height: 70px;
+  max-height: 70px;
   padding-top: 10px;
   display: flex;
   justify-content: center;
@@ -57,14 +69,16 @@
 }
 #gridCont{
   display: grid;
-  grid-auto-columns: 100px;
   row-gap: 25px;
-  column-gap: 8px;
-  grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+  column-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
   grid-template-rows: repeat(3, auto);
+  justify-items: center;
+}
+#cvCont, #aboutme, .engineeringCont, .engineeringLogos, #cvListCont{
+  margin-top: var(--margin_top_val);
 }
 #aboutme {
-  margin-top: var(--margin_top_val);
   border-radius: 15px;
 }
 .engineeringCont, .engineeringLogos{
@@ -75,11 +89,9 @@
   flex-wrap: wrap;
 }
 .engineeringCont{
-  margin-top: var(--margin_top_val);
   flex-direction: column;
 }
 .engineeringLogos{
-  margin-top: var(--margin_top_val);
   width: 100%;
   gap: 50px;
   flex-direction: row;
@@ -96,7 +108,23 @@
     display: grid;
     grid-template-columns: 100%;
   } 
-  #personalimage {
-    width: 100%;
+  #cvListCont{
+    padding-left: 0px;
+  }
+}
+@media screen and (max-width: 576px) {
+  
+  #gridCont{
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+  }
+  .logoParent div:first-child{
+    height: 100px;
+  }
+  .logoParent div:nth-child(2){
+    max-height: 90px;
+  }
+  .logoParent {
+    height: 150px;
+    width: 100px;
   }
 }
