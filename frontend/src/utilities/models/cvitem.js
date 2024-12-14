@@ -34,3 +34,18 @@ export default class Cvitem {
         };
     }
 }
+
+export class LinkItem {
+
+    /**
+     * 
+     * @param {*} link the actual URL link prefixed with https
+     * @param {*} linkText the alias name of the URL link
+     * @param {*} linkImage value is either 'link.svg' if the link is available else 'link_unavailable.svg'
+     */
+    constructor(link, linkText, linkImage){
+        this.link = link;
+        this.linkText = linkText;
+        this.linkImage = linkImage;
+    }
+}

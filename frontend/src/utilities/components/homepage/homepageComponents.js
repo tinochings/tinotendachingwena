@@ -18,7 +18,7 @@ export function LogoContainer({ imageUrl, imageAlt, title, classList }) {
 
 /**
  * Singular list representation of a CV entry
- * @param {*} param0 
+ * @param {*} cvItem the model class instance representation
  * @returns 
  */
 export function CurriculumnVitaeItem({ cvItem = new Cvitem() }) {
@@ -80,7 +80,8 @@ function ConvertArrayToListItems({arrayToConvert, listType}, ){
                         <ul className={`${componentsStyle.cvItemSkillsUl}`}>
                         {arrayToConvert.map((item, index) => 
                                 <li key={index} className={`${componentsStyle.cvItemLinkListItem}`}>
-                                    <a className='menu-item' href={item}>{item}</a>
+                                    <img src={item.linkImage} alt={item.linkImage === '/miscellaneous/link.svg' ? 'Link available' : 'Link unavailable'}></img>
+                                    <a className={`menu-item ${componentsStyle.cvAnchor}`} href={item.link} target='_blank'>{item.linkText}</a>
                                 </li>
                             )}
                         </ul>
