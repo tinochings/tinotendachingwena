@@ -6,7 +6,9 @@
 #fullname {
   font-weight: bold;
 }
-
+#personalLink{
+  color: #0000EE;
+}
 #developer {
   font-style: italic;
 }
@@ -23,6 +25,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: var(--margin_top_val);
 }
 #statement {
   display: flex;
@@ -54,6 +57,7 @@
 }
 .logoParent img{
   height: auto;
+  background-color: white;
   max-height: 100%;
   width: 100px;
 }
