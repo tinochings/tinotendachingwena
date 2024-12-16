@@ -5,7 +5,7 @@ import MetaData from "@/utilities/components/MetaData";
 import { CurriculumnVitaeItem, LogoContainer } from "@/utilities/components/homepage/homepageComponents";
 import { deltaBeveragesCvItem, poetsKingdomCvItem, tiisGlamStudioCvItem, trinMediaCvItem, zvevatsungaSteelAndPlumbingCvItem } from "@/utilities/services/homepage/hompageServices";
 
-export default function Home() {
+export default function Home({language="en"}) {
   return (
     <>
       <MetaData title={"Title"}></MetaData>
@@ -43,7 +43,7 @@ function IntroductionSection() {
             </div>
           </main>
         </Col>
-        <Col className={`${homePageStyle.personalImageCont}`}>
+        <Col className={`${homePageStyle.frameworksCont}`}>
           <div id={`${homePageStyle.circleContainer}`}>
             <div id={`${homePageStyle.gridCont}`}>
               <LogoContainer classList={`${homePageStyle.logoParent}`} imageUrl={"/logos/android.png"} imageAlt={"Android Logo"} title={""} />

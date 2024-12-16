@@ -26,6 +26,7 @@
   justify-content: center;
   align-items: center;
   margin-top: var(--margin_top_val);
+  max-height: 220px;
 }
 #statement {
   display: flex;
@@ -102,7 +103,7 @@
 }
 /* Mobile Design */
 @media screen and (max-width: 1000px) {
-  .personalImageCont {
+  .frameworksCont {
     text-align: center;
   }
 }
@@ -114,6 +115,9 @@
   } 
   #cvListCont{
     padding-left: 0px;
+  }
+  .frameworksCont {
+    margin-top: var(--margin_top_val);
   }
 }
 @media screen and (max-width: 576px) {
