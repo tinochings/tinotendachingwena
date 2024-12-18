@@ -4,13 +4,16 @@ import homePageStyle from './homepage.module.css';
 import MetaData from "@/utilities/components/MetaData";
 import { CurriculumnVitaeItem, LogoContainer } from "@/utilities/components/homepage/homepageComponents";
 import { deltaBeveragesCvItem, poetsKingdomCvItem, tiisGlamStudioCvItem, trinMediaCvItem, zvevatsungaSteelAndPlumbingCvItem } from "@/utilities/services/homepage/hompageServices";
+import { enresource } from "@/utilities/resources/en";
+import { snresource } from "@/utilities/resources/sn";
 
 export default function Home({language="en"}) {
+  let languageResourceObject = language === "en" ? enresource : snresource;
   return (
     <>
       <MetaData title={"Title"}></MetaData>
-      <IntroductionSection />
-      <CurriculumnVitae />
+      <IntroductionSection languageResource={languageResourceObject}/>
+      <CurriculumnVitae language={language}/>
     </>
   );
 }
@@ -19,7 +22,7 @@ export default function Home({language="en"}) {
  * JSX for the Introduction section
  * @returns 
  */
-function IntroductionSection() {
+function IntroductionSection({languageResource}) {
   return (
     <section id={`${homePageStyle.introduction}`} className="container">
       <Row className={`${homePageStyle.introductionRow}`}>
@@ -29,17 +32,13 @@ function IntroductionSection() {
             <h2 id={`${homePageStyle.developer}`}>Full Stack Software Engineer</h2>
             <div id={`${homePageStyle.statement}`}>
               <p>
-                Frontend and backend. To whichever end, I am a supreme artisan. Eloquent, efficient and maintainable code
-                are embedded in my dna. My true passion lies in programming. I have a solid foundation through my Bachelors Of Science
-                in <b>Computer Science</b> from <b>VU Amsterdam</b>.
-                This foundation can be shown in the languages and frameworks I have mastered. Furthermore the current website you are viewing
-                was made using a React framework Next.js for the frontend. The backen was made using Spring Boot and the source code can be
-                found at <a id={`${homePageStyle.personalLink}`} href="https://github.com/tinochings/tinotendachingwena" target='_blank'>Tinotenda Chingwena Source code</a>.
-                Hey! Look below it's me :)
+                {languageResource.statement1} <b>Computer Science</b> from <b>VU Amsterdam</b>.
+                {languageResource.statement2} <a id={`${homePageStyle.personalLink}`} href="https://github.com/tinochings/tinotendachingwena" target='_blank'>Tinotenda Chingwena Source code</a>. 
+                {languageResource.statement3}
               </p>
             </div>
             <div id={`${homePageStyle.personalImageCont}`}>
-            <img id={`${homePageStyle.personalimage}`} src="/socialMedia/personalphotodupe.png"></img>
+            <img id={`${homePageStyle.personalimage}`} src="/socialMedia/personalphotodupe.png" alt="Tinotenda Chingwena"></img>
             </div>
           </main>
         </Col>
@@ -62,7 +61,7 @@ function IntroductionSection() {
           </div>
         </Col>
         <div className={`${homePageStyle.engineeringCont}`}>
-          <span className="h1">Perfecting the art of Software Engineering:</span>
+          <span className="h1">{languageResource.engineeringStatement}</span>
           <div className={`${homePageStyle.engineeringLogos}`}>
             <LogoContainer classList={`${homePageStyle.logoParent}`} imageUrl={"/logos/github.svg"} imageAlt={"Github logo"} title={"Github"} />
             <LogoContainer classList={`${homePageStyle.logoParent}`} imageUrl={"/logos/jira.png"} imageAlt={"Jira logo"} title={"Jira"} />
@@ -78,7 +77,7 @@ function IntroductionSection() {
  * 
  * @returns JSX for Curriculumn Vitae Section
  */
-function CurriculumnVitae() {
+function CurriculumnVitae({language = "en"}) {
   return (
     <section className="container">
       <Row>
