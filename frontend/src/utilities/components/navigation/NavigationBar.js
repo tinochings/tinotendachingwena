@@ -2,13 +2,13 @@
 
 import { Col, Container, Dropdown, Navbar, NavbarBrand, Row, Nav } from "react-bootstrap";
 
-export default function NavigationBar() {
+export default function NavigationBar({language="en"}) {
 
     return (
         <header>
             <Navbar expand="md">
                 <Container>
-                    <NavbarBrand>
+                    <NavbarBrand as="a" href={language === "en" ? "/en/" : "sn"}>
                         <img id="logo" src="/logo/WCLOGO1.png" alt="WC Brand logo" />
                     </NavbarBrand>
 
@@ -18,10 +18,10 @@ export default function NavigationBar() {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav as="ul" className="ul">
                             <Nav.Item as="li" className="li">
-                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to Tinotenda's experiences" href="/experiences">Experiences</Nav.Link>
+                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to Tinotenda's experiences" href={language === "en" ? "/en/experiences" : "/sn/experiences"}>{language === "en" ? "Experiences" : "Nhoroondo"}</Nav.Link>
                             </Nav.Item>
                             <Nav.Item as="li" className="li">
-                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to request Tinotenda's services" href="/services">Services</Nav.Link>
+                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to request Tinotenda's services" href={language === "en" ? "/en/services" : "/sn/services"}> {language === "en" ? "Services" : "Mabasa"}</Nav.Link>
                             </Nav.Item>
                                 <Dropdown as="li" className="li">
                                     <Dropdown.Toggle title="Click to bring out socials container" className="menu-item a vertical-centre" id="socialsMenuLink" as="a" href="#">
@@ -44,7 +44,7 @@ export default function NavigationBar() {
                                     </Dropdown.Menu>
                                 </Dropdown>
                             <Nav.Item as="li" className="li">
-                                <Nav.Link className="menu-item vertical-centre a" title="Change language to Zezuru" href="/sn/" id="language">Zezuru</Nav.Link>
+                                <Nav.Link className="menu-item vertical-centre a" title="Change language to Zezuru" href={language === "en" ? "/sn/" : "/en/"} id="language">{language === "en" ? "Zezuru" : "English"}</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Navbar.Collapse>
