@@ -1,0 +1,50 @@
+.project-item {
+    margin-top: 75px;
+    padding-bottom: 15px;
+}
+
+.project-item:nth-child(1) {
+    margin-top: 0px;
+}
+
+.project-item a {
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.spacing {
+    margin-top: 25px;
+}
+
+.pictures {
+    max-height: 300px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.application_about {
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 1000px) {}
+
+@media screen and (max-width: 576px) {
+    .pictures {
+        max-height: 256px;
+        margin-top: 10px;
+    }
+
+    .imageRow {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 256px) {
+    .pictures {
+        max-height: 128px;
+    }
+}

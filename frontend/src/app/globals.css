@@ -158,9 +158,20 @@ footer .col {
   flex-direction: column;
   text-align: center;
 }
-
+/* Carousel design */
+.carousel-indicators [data-bs-target] {
+  background-color: var(--text_color);
+}
 /* Mobile Design */
 @media screen and (max-width: 1000px) {
+  .carousel-control-prev{
+    justify-content: flex-start;
+    margin-left: -50px;
+  }
+  .carousel-control-next{
+    justify-content: flex-end;
+    margin-right: -50px;
+  }
 }
 @media screen and (max-width: 768px) {  
     .footer-row-cont {
@@ -178,9 +189,23 @@ footer .col {
     width: 50%;
   }
 }
+@media screen and (max-width: 630px) {
+  .carousel-control-prev{
+    margin-left: -25px;
+  }
+  .carousel-control-next{
+    margin-right: -25px;
+  }
+}
 @media screen and (max-width: 576px) {
   .justify-content-end {
     justify-content: center !important;
+  }
+  .carousel-control-prev{
+    margin-left: 0px;
+  }
+  .carousel-control-next{
+    margin-right: 0px;
   }
 }
 @media screen and (max-width: 350px) {
