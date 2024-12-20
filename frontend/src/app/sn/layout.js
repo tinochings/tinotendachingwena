@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   return (
     <html lang="sn">
       <body>
-      <NavigationBar/>
+      <NavigationBar language='sn'/>
         {children}
         {/* <Footer/> */}
       </body>
