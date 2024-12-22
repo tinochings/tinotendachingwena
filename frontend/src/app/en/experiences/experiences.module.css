@@ -1,13 +1,4 @@
-.project-item {
-    margin-top: 75px;
-    padding-bottom: 15px;
-}
-
-.project-item:nth-child(1) {
-    margin-top: 0px;
-}
-
-.project-item a {
+.projectItem a {
     font-weight: bolder;
     font-size: 20px;
     text-decoration: underline;

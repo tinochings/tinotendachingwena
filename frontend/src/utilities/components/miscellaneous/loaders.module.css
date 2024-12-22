@@ -1,0 +1,41 @@
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+.skeletonH1, .descriptionP, .aboutP, .image, .a{
+    border-radius: 0.75em;
+} 
+.skeletonH1 {
+    height: 2rem;
+}
+
+.image{
+    max-height: 250px;
+    width: 250px;
+    height: 250px;
+}
+
+.aboutP {
+    height: 1.2rem;
+}
+.descriptionP {
+    height: 3.6rem;
+}
+.descriptionP, .aboutP{
+    width: 100%;
+}
+
+.a {
+    display: block;
+    width: 150px;
+    height: 1em;
+}

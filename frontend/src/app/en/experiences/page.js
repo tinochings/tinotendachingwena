@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { displayState, ViewState, fetchSectionData } from "@/utilities/services/experiences/service";
 import experienceStyle from './experiences.module.css';
 import { sectionDataToExperienceSections } from "@/utilities/services/experiences/service";
+import { SkeletonLoadingAnimation } from "@/utilities/components/miscellaneous/loading";
 
 /**
  * I could have made this entire app purely in Javascript with Classes, Models, Services and so on and so forth but you would
@@ -16,7 +17,7 @@ export default function Experiences({ language = "en" }) {
     const [sectionDataList, setSectionDataList] = useState([]);
 
     useEffect(() => {
-
+        fetchSectionData(setCurrentDisplayState, setSectionDataList, displayState)
     }, [sectionDataList]);
 
     return (
@@ -54,7 +55,10 @@ function ViewStateToDisplay({ displayState = ViewState.LoadingScreen, sectionDat
             );
         case ViewState.LoadingScreen:
             return (
-                <ExperienceSection sectionData={sectionData} />
+                <>
+                <SkeletonLoadingAnimation experienceStyle={experienceStyle}></SkeletonLoadingAnimation>
+                <SkeletonLoadingAnimation experienceStyle={experienceStyle}></SkeletonLoadingAnimation>
+                </>
             );
         case ViewState.Alert:
             return (
