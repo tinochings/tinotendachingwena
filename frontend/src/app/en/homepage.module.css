@@ -119,6 +119,9 @@
   .frameworksCont {
     margin-top: var(--margin_top_val);
   }
+  .engineeringCont span{
+    text-align: center;
+  }
 }
 @media screen and (max-width: 576px) {
   
