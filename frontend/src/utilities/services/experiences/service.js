@@ -4,35 +4,43 @@ import { CarouselNavigationIcon } from "@/utilities/components/experiences/exper
 export const ViewState = { DefaultScreen: Symbol(0), LoadingScreen: Symbol(1), Alert: Symbol(2) };
 export const displayState = { DisplayState: ViewState.LoadingScreen, AlertState: { headerText: "", bodyText: "" } };
 
-
-export function fetchSectionData(_setCurrentDisplayState, _setSectionDataList) {
-    const sectionDataListResponse = getAllSetionData;
-
+/**
+ * 
+ * @param {*} setCurrentDisplayState 
+ * @param {*} setSectionDataList 
+ * @param {*} displayState 
+ */
+export function fetchSectionData(setCurrentDisplayState, setSectionDataList, displayState) {
+    const sectionDataListResponse = getAllSetionData();
     sectionDataListResponse.then((sectionData) => {
         if (Array.isArray(sectionData)) {
             if (sectionData.length === 0) {
 
             }
             else {
-
+                setSectionDataList(sectionData);
+                setCurrentDisplayState({ ...displayState, DisplayState: ViewState.DefaultScreen });
             }
-        } else if (sectionData === "-1") {
-
+        } else if (typeof sectionData === "object") {
+            setCurrentDisplayState({ DisplayState: ViewState.Alert, AlertState: { headerText: sectionData.headerText, bodyText: sectionData.bodyText } });
         }
     })
 }
 
 /**
  * 
- * @returns 
+ * @returns an array of JSON Objects if network call was successful else -1 is returned
  */
 async function getAllSetionData() {
     try {
-        const response = await fetch(`http:localhost:8080/experiences/api/data`);
-        const responseJson = await response.json();
-        return responseJson;
+        const response = await fetch("http://localhost:8080/api/experiences/");
+        if (response.status === 200) {
+            const responseJson = await response.json();
+            return responseJson;
+        }
+        throw new Error(`Failed to retrieve the content for this webpage from the server due to error code: ${response.status}`)
     } catch (error) {
-        return new Promise((resolve, _reject) => resolve("-1"));
+        return new Promise((resolve, _reject) => resolve({headerText: "Network Error", bodyText : error.message}));
     }
 }
 

@@ -4,6 +4,7 @@ import { displayState, ViewState, fetchSectionData } from "@/utilities/services/
 import experienceStyle from './experiences.module.css';
 import { sectionDataToExperienceSections } from "@/utilities/services/experiences/service";
 import { SkeletonLoadingAnimation } from "@/utilities/components/miscellaneous/loading";
+import AlertBox from "@/utilities/components/miscellaneous/alert";
 
 /**
  * I could have made this entire app purely in Javascript with Classes, Models, Services and so on and so forth but you would
@@ -21,7 +22,7 @@ export default function Experiences({ language = "en" }) {
     }, [sectionDataList]);
 
     return (
-        <ViewStateToDisplay displayState={currentDisplayState.DisplayState} sectionData={sectionDataList} />
+        <ViewStateToDisplay currentDisplayState={currentDisplayState} sectionData={sectionDataList} language={language} />
     );
 }
 
@@ -46,9 +47,8 @@ function ExperienceSection({ sectionData = [] }) {
  * @param {*} param0 
  * @returns 
  */
-function ViewStateToDisplay({ displayState = ViewState.LoadingScreen, sectionData = [] }) {
-
-    switch (displayState) {
+function ViewStateToDisplay({ currentDisplayState, sectionData = [], language }) {
+    switch (currentDisplayState.DisplayState) {
         case ViewState.DefaultScreen:
             return (
                 <ExperienceSection sectionData={sectionData} />
@@ -62,8 +62,12 @@ function ViewStateToDisplay({ displayState = ViewState.LoadingScreen, sectionDat
             );
         case ViewState.Alert:
             return (
-                <></>
+                <AlertBox language={language} onCloseAlert={() => {}} headerText={currentDisplayState.AlertState.headerText} bodyText={currentDisplayState.AlertState.bodyText}/>
             );
+        default : 
+            return (
+                <AlertBox onCloseAlert={() => {}} language={language} headerText={currentDisplayState.AlertState.headerText} bodyText={currentDisplayState.AlertState.bodyText}/>
+            );    
     }
 
 }
