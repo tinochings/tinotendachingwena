@@ -101,6 +101,11 @@
   gap: 50px;
   flex-direction: row;
 }
+.cvHeaderCont{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
 /* Mobile Design */
 @media screen and (max-width: 1000px) {
   .frameworksCont {
@@ -137,5 +142,10 @@
   .logoParent {
     height: 150px;
     width: 100px;
+  }
+  .cvHeaderCont{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
 }

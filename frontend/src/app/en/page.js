@@ -7,13 +7,13 @@ import { deltaBeveragesCvItem, poetsKingdomCvItem, tiisGlamStudioCvItem, trinMed
 import { enresource } from "@/utilities/resources/en";
 import { snresource } from "@/utilities/resources/sn";
 
-export default function Home({language="en"}) {
+export default function Home({ language = "en" }) {
   let languageResourceObject = language === "en" ? enresource : snresource;
   return (
     <>
       <MetaData title={"Title"}></MetaData>
-      <IntroductionSection languageResource={languageResourceObject}/>
-      <CurriculumnVitae language={language}/>
+      <IntroductionSection languageResource={languageResourceObject} />
+      <CurriculumnVitae language={language} />
     </>
   );
 }
@@ -22,7 +22,7 @@ export default function Home({language="en"}) {
  * JSX for the Introduction section
  * @returns 
  */
-function IntroductionSection({languageResource}) {
+function IntroductionSection({ languageResource }) {
   return (
     <section id={`${homePageStyle.introduction}`} className="container">
       <Row className={`${homePageStyle.introductionRow}`}>
@@ -33,12 +33,12 @@ function IntroductionSection({languageResource}) {
             <div id={`${homePageStyle.statement}`}>
               <p>
                 {languageResource.statement1} <b>Computer Science</b> from <b>VU Amsterdam</b>.
-                {languageResource.statement2} <a id={`${homePageStyle.personalLink}`} href="https://github.com/tinochings/tinotendachingwena" target='_blank'>Tinotenda Chingwena Source code</a>. 
+                {languageResource.statement2} <a id={`${homePageStyle.personalLink}`} href="https://github.com/tinochings/tinotendachingwena" target='_blank'>Tinotenda Chingwena Source code</a>.
                 {languageResource.statement3}
               </p>
             </div>
             <div id={`${homePageStyle.personalImageCont}`}>
-            <img id={`${homePageStyle.personalimage}`} src="/socialMedia/personalphotodupe.png" alt="Tinotenda Chingwena"></img>
+              <img id={`${homePageStyle.personalimage}`} src="/socialMedia/personalphotodupe.png" alt="Tinotenda Chingwena"></img>
             </div>
           </main>
         </Col>
@@ -77,12 +77,18 @@ function IntroductionSection({languageResource}) {
  * 
  * @returns JSX for Curriculumn Vitae Section
  */
-function CurriculumnVitae({language = "en"}) {
+function CurriculumnVitae({ language = "en" }) {
   return (
     <section className="container">
       <Row>
         <Col id={`${homePageStyle.cvCont}`}>
-          <h3 style={{ fontWeight: 900 }}>Curriculumn Vitae</h3>
+          <div className={`${homePageStyle.cvHeaderCont}`}>
+            <h3 style={{ fontWeight: 900 }}>Curriculumn Vitae</h3>
+            <a href="/cv/CV-Tinotenda-Chingwena.pdf" download={"Tinotenda Chingwena CV"}>
+              <img width={40} src="/miscellaneous/pdf.svg"></img>
+            </a>
+          </div>
+
           <ul id={`${homePageStyle.cvListCont}`}>
             <CurriculumnVitaeItem cvItem={deltaBeveragesCvItem()}></CurriculumnVitaeItem>
             <CurriculumnVitaeItem cvItem={tiisGlamStudioCvItem()}></CurriculumnVitaeItem>
