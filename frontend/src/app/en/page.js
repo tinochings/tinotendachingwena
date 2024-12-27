@@ -3,7 +3,9 @@ import { Row, Col } from "react-bootstrap";
 import homePageStyle from './homepage.module.css';
 import MetaData from "@/utilities/components/MetaData";
 import { CurriculumnVitaeItem, LogoContainer } from "@/utilities/components/homepage/homepageComponents";
-import { deltaBeveragesCvItem, poetsKingdomCvItem, tiisGlamStudioCvItem, trinMediaCvItem, zvevatsungaSteelAndPlumbingCvItem } from "@/utilities/services/homepage/hompageServices";
+import { deltaBeveragesCvItem, poetsKingdomCvItem, tiisGlamStudioCvItem, trinMediaCvItem, zvevatsungaSteelAndPlumbingCvItem,
+  deltaBeveragesCvItemSn, poetsKingdomCvItemSn, tiisGlamStudioCvItemSn, trinMediaCvItemSn, zvevatsungaSteelAndPlumbingCvItemSn
+ } from "@/utilities/services/homepage/hompageServices";
 import { enresource } from "@/utilities/resources/en";
 import { snresource } from "@/utilities/resources/sn";
 
@@ -90,11 +92,19 @@ function CurriculumnVitae({ language = "en" }) {
           </div>
 
           <ul id={`${homePageStyle.cvListCont}`}>
-            <CurriculumnVitaeItem cvItem={deltaBeveragesCvItem()}></CurriculumnVitaeItem>
+            { language === "en" ? <>
+              <CurriculumnVitaeItem cvItem={deltaBeveragesCvItem()}></CurriculumnVitaeItem>
             <CurriculumnVitaeItem cvItem={tiisGlamStudioCvItem()}></CurriculumnVitaeItem>
             <CurriculumnVitaeItem cvItem={zvevatsungaSteelAndPlumbingCvItem()}></CurriculumnVitaeItem>
             <CurriculumnVitaeItem cvItem={trinMediaCvItem()}></CurriculumnVitaeItem>
             <CurriculumnVitaeItem cvItem={poetsKingdomCvItem()}></CurriculumnVitaeItem>
+            </> : <>
+            <CurriculumnVitaeItem cvItem={deltaBeveragesCvItemSn()}></CurriculumnVitaeItem>
+            <CurriculumnVitaeItem cvItem={tiisGlamStudioCvItemSn()}></CurriculumnVitaeItem>
+            <CurriculumnVitaeItem cvItem={zvevatsungaSteelAndPlumbingCvItemSn()}></CurriculumnVitaeItem>
+            <CurriculumnVitaeItem cvItem={trinMediaCvItemSn()}></CurriculumnVitaeItem>
+            <CurriculumnVitaeItem cvItem={poetsKingdomCvItemSn()}></CurriculumnVitaeItem>
+            </>}
           </ul>
 
         </Col>
