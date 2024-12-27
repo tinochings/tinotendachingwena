@@ -8,7 +8,7 @@ export default function NavigationBar({language="en"}) {
         <header>
             <Navbar expand="md">
                 <Container>
-                    <NavbarBrand as="a" href={language === "en" ? "/en/" : "sn"}>
+                    <NavbarBrand as="a" href={language === "en" ? "/en/" : "/sn/"}>
                         <img id="logo" src="/logo/WCLOGO1.png" alt="WC Brand logo" />
                     </NavbarBrand>
 
@@ -21,7 +21,7 @@ export default function NavigationBar({language="en"}) {
                                 <Nav.Link className="menu-item vertical-centre a" title="Navigate to Tinotenda's experiences" href={language === "en" ? "/en/experiences" : "/sn/experiences"}>{language === "en" ? "Experiences" : "Nhoroondo"}</Nav.Link>
                             </Nav.Item>
                             <Nav.Item as="li" className="li">
-                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to request Tinotenda's services" href={language === "en" ? "/en/services" : "/sn/services"}> {language === "en" ? "Services" : "Mabasa"}</Nav.Link>
+                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to request Tinotenda's services" href={language === "en" ? "/en/contact" : "/sn/contact"}> {language === "en" ? "Contact" : "Ndibatei"}</Nav.Link>
                             </Nav.Item>
                                 <Dropdown as="li" className="li">
                                     <Dropdown.Toggle title="Click to bring out socials container" className="menu-item a vertical-centre" id="socialsMenuLink" as="a" href="#">
@@ -29,16 +29,16 @@ export default function NavigationBar({language="en"}) {
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                         <Dropdown.Item title="Tinotenda Chingwena's Facebook page" aria-label="Opens Tinotenda Chingwena's facebook page" href="https://www.facebook.com/tchingwena1" target="_blank">
-                                            <img className="linkimg" src="socialMedia/facebook.svg" alt="Facebook Logo" />
+                                            <img className="linkimg" src="/socialMedia/facebook.svg" alt="Facebook Logo" />
                                             <span>Facebook</span>
                                         </Dropdown.Item>
                                         <Dropdown.Item title="Tinotenda Chingwena's LinkedIn page" aria-label="Opens Tinotenda Chingwena's LinkedIn page"
                                             href="http://www.linkedin.com/in/tinotenda-chingwena-6034a6211" target="_blank">
-                                            <img src="socialMedia/linkedin.svg" alt="Linkedin Logo" className="linkimg" />
+                                            <img src="/socialMedia/linkedin.svg" alt="Linkedin Logo" className="linkimg" />
                                             <span>LinkedIn</span>
                                         </Dropdown.Item>
                                         <Dropdown.Item title="Tinotenda Chingwena's Github page" aria-label="Opens Tinotenda Chingwena's GitHub page" href="https://github.com/tinochings" target="_blank">
-                                            <img src="socialMedia/githublogo.svg" alt="Github Logo" className="linkimg" />
+                                            <img src="/socialMedia/githublogo.svg" alt="Github Logo" className="linkimg" />
                                             <span>Github</span>
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
