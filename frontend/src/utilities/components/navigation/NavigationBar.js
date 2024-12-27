@@ -13,7 +13,7 @@ export default function NavigationBar({ language = "en" }) {
                     </NavbarBrand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
-                        <img width={50} src="/miscellaneous/hamburger.svg"></img>
+                        <img width={35} src="/miscellaneous/hamburger.svg"></img>
                     </Navbar.Toggle>
 
                     <Navbar.Collapse className="justify-content-end">
