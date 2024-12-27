@@ -5,7 +5,7 @@ export const enresource = {
     statement2: `This foundation can be shown in the languages and frameworks I have mastered. Furthermore the current website you are viewing
                 was made using a React framework Next.js for the frontend. The backend was made using Spring Boot and the source code can be
                 found at`,
-    statement3: `Hey! Look below it's me :)`,
+    statement3: ` Hey! Look below it's me :)`,
     engineeringStatement: `Perfecting the art of Software Engineering:`  ,
 
 }
