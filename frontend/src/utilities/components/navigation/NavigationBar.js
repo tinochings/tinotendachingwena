@@ -88,8 +88,8 @@ export function Footer({language = "en"}) {
                     </Col>
                     <Col className="footerCol2">
                         <p>
-                            User Interface coded in <span style={{ color: '#0000FF', fontWeight: 900 }}>Visual Studio Code</span> and built with <span style={{ color: '#000000', fontWeight: 900 }}>Next.js.</span>
-                            Server coded in InteliJ and built with <span style={{ color: '#008000', fontWeight: 900 }}>Spring Boot</span>
+                            User Interface coded in <span style={{ color: '#0000FF', fontWeight: 900 }}>Visual Studio Code</span> and built with <span style={{ color: '#000000', fontWeight: 700 }}>Next.js.</span>
+                            Server coded in InteliJ and built with <span style={{ color: '#008000', fontWeight: 900 }}>Spring Boot</span>. Source code can be found at <a style={{color: "mediumblue", fontWeight: 900}} href="https://github.com/tinochings/tinotendachingwena" target='_blank'>tinotendachingwena</a>
                         </p>
                     </Col>
                 </Row>
