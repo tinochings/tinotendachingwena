@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       <body>
       <NavigationBar language='sn'/>
         {children}
-        {/* <Footer/> */}
+        <Footer/>
       </body>
     </html>
   );

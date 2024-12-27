@@ -29,7 +29,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-section{
+section {
   margin-top: var(--margin_top_val);
 }
 
@@ -48,36 +48,46 @@ section{
 a {
   color: inherit;
 }
+
 p {
   margin-bottom: 0px;
 }
+
 /* navigation*/
 .ul {
   padding: 0px;
 }
+
 ul {
   list-style: none;
   /* padding: 0px; */
 }
-#logo, .fabars {
+
+#logo,
+.fabars {
   height: 70px;
 }
+
 #logo:hover {
   background-color: white;
 }
+
 .linkimg {
   height: 52px;
   width: 52px;
   padding: 5px;
 }
+
 .a {
   color: #533621;
   text-decoration: none;
 }
-.a:hover{
+
+.a:hover {
   color: white;
   background-color: var(--text_color);
 }
+
 .menu-item {
   text-decoration: none;
   border-color: var(--text_color);
@@ -87,21 +97,26 @@ ul {
   border-style: solid;
   text-align: center;
   background-color: white;
-}  
-.vertical-centre, .vertical-centresn {
+}
+
+.vertical-centre,
+.vertical-centresn {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
 .navbar-toggler-icon {
   font-size: 25px;
-}  
-.dropdown-item span{
+}
+
+.dropdown-item span {
   font-size: 20px;
   text-align: center;
   padding: 5px;
 }
+
 .navbar,
 .navbar-menu,
 .navbar-start,
@@ -110,9 +125,11 @@ ul {
   flex-grow: 1;
   align-items: stretch;
 }
+
 .navbar-nav {
   gap: 5px;
 }
+
 .navbar-end {
   justify-content: end;
 }
@@ -122,103 +139,123 @@ ul {
   background-color: var(--text_color);
   color: white;
 }
+
 footer {
   position: relative;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
+
+footer .row {
+  margin-top: var(--margin_top_val);
+}
+
 footer p {
-  font-weight: bold;
   height: inherit;
-  margin-bottom: 0px;
   text-align: left;
 }
 
-#footer-salutation {
-  text-align: left;
-  font-size: 25px;
-  font-weight: 500;
-}
-
-.giraffe {
-  width: 100%;
-  max-width: 256px;
-  max-height: 256px;
-}
-
-footer .col {
-  text-align: left;
-  height: inherit;
-}
-
-#footer-img-div {
+.footerCol1 {
   display: flex;
-  justify-content: center;
-  align-content: center;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
+
+.footerCol2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerLine {
+  width: 100%;
+  height: 7px;
+  border-radius: 15px;
+  background-color: var(--text_color);
+}
+
+.footerImages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
 /* Carousel design */
 .carousel-indicators [data-bs-target] {
   background-color: var(--text_color);
 }
+
 /* Mobile Design */
 @media screen and (max-width: 1000px) {
-  .carousel-control-prev{
+  .carousel-control-prev {
     justify-content: flex-start;
     margin-left: -50px;
   }
-  .carousel-control-next{
+
+  .carousel-control-next {
     justify-content: flex-end;
     margin-right: -50px;
   }
 }
-@media screen and (max-width: 768px) {  
-    .footer-row-cont {
-      flex-direction: column;
-    }
-  
+
+@media screen and (max-width: 768px) {
+  .footer-row-cont {
+    flex-direction: column;
+  }
+
 }
+
 @media screen and (max-width: 767px) {
   .li {
     margin-top: 10px;
   }
+
   .dropdown-menu {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
   }
 }
+
 @media screen and (max-width: 630px) {
-  .carousel-control-prev{
+  .carousel-control-prev {
     margin-left: -25px;
   }
-  .carousel-control-next{
+
+  .carousel-control-next {
     margin-right: -25px;
   }
 }
+
 @media screen and (max-width: 576px) {
   .justify-content-end {
     justify-content: center !important;
   }
-  .carousel-control-prev{
+
+  .carousel-control-prev {
     margin-left: 0px;
   }
-  .carousel-control-next{
+
+  .carousel-control-next {
     margin-right: 0px;
   }
-}
-@media screen and (max-width: 350px) {
-.menuoptions {
-  height: auto;
-}
-.fa-bars {
-  font-size: 20px;
-}
+
+  footer .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  footer p {
+    text-align: center;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media screen and (max-width: 350px) {
+  .menuoptions {
+    height: auto;
   }
 }
