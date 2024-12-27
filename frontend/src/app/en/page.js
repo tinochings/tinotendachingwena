@@ -86,7 +86,7 @@ function CurriculumnVitae({ language = "en" }) {
         <Col id={`${homePageStyle.cvCont}`}>
           <div className={`${homePageStyle.cvHeaderCont}`}>
             <h3 style={{ fontWeight: 900 }}>Curriculumn Vitae</h3>
-            <a href="/cv/CV-Tinotenda-Chingwena.pdf" download={"Tinotenda Chingwena CV"}>
+            <a href="/cv/CV_Tinotenda_Chingwena.pdf" download={"Tinotenda Chingwena CV"}>
               <img width={40} src="/miscellaneous/pdf.svg"></img>
             </a>
           </div>
