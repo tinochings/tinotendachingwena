@@ -9,3 +9,15 @@ export const enresource = {
     engineeringStatement: `Perfecting the art of Software Engineering:`  ,
 
 }
+
+export const contactResource = {
+    nameLabel: "Name",
+    emailLabel: "Email",
+    messageLabel: "Message",
+    statementMessage: `Empowering the world with first class software services`,
+    contactMe: "Contact Me",
+    contactText: `I am available for all software related opportunities. Feel free to contact me where it conveniences you:`,
+    failedNotificationText: `Unfortunately, your request could not be sent. If the problem persists, kindly email me on: 
+                    tinotendachings@gmail.com`,
+    networkFailure: "A network error was encountered. Check your internet connectivity and try again."
+}

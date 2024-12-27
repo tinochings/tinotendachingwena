@@ -5,9 +5,11 @@ import { submitContactForm } from '@/utilities/services/contact/service';
 import { contactResource } from '@/utilities/resources/en';
 import { contactResourceSn } from '@/utilities/resources/sn';
 import { useState } from 'react';
+import { FormStates } from '@/utilities/services/contact/service';
 
 export default function Contact({ language = "en" }) {
     let languageResourceObject = language === "en" ? contactResource : contactResourceSn;
+
     return (
         <main>
             <Container>
@@ -51,10 +53,19 @@ function ContactColumn({ languageResource }) {
     );
 }
 
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 function FormColumn({ languageResource }) {
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [formState, setFormState] = useState(FormStates.INPUT);
+    const [notificationText, setNotificationText] = useState('');
+    const [toggleNotification, setToggleNotification] = useState(false);
 
     const onNameChange = (nameToSet) => {
         if (nameToSet.target.value !== name)
@@ -68,24 +79,75 @@ function FormColumn({ languageResource }) {
         if (messageToSet.target.value !== message)
             setMessage(messageToSet.target.value);
     }
-    return (
-        <form id={`${contactStyle.contactForm}`} onSubmit={submitContactForm} acceptCharset='UTF-8' method='post'>
-            <div className={`${contactStyle.inputContainer}`}>
-                <label htmlFor='name'>{languageResource.nameLabel}</label>
-                <input onChange={onNameChange} aria-required={true} value={name} autoComplete='name' id='name' type='text' required></input>
-            </div>
-            <div className={`${contactStyle.inputContainer}`}>
-                <label htmlFor='email'>{languageResource.emailLabel}</label>
-                <input onChange={onEmailChange} aria-required={true} autoComplete='email' id='email' type='email' value={email} required></input>
-            </div>
-            <div className={`${contactStyle.inputContainer}`}>
-                <label htmlFor='message'>{languageResource.messageLabel}</label>
-                <textarea onChange={onMessageChange} aria-required={true} id='message' value={message} required></textarea>
-            </div>
-            <div className={`${contactStyle.inputContainer}`}>
-                <input className={`${contactStyle.submitButton}`} role='button' type='submit' value={"SEND"}></input>
-            </div>
+    const onSubmitForm = (event) => {
+        event.preventDefault();
+        submitContactForm(name, email, message, setFormState, setToggleNotification, setNotificationText, languageResource);
+    }
 
-        </form>
+    return (
+        <>
+            {
+                formState === FormStates.SENDING ?
+                    <div className={`${contactStyle.loader}`}>
+                        Sending your message :) ...
+                    </div> : <> </>
+            }
+            {
+                toggleNotification === true ? <LoaderNotification notificationText={notificationText} isNotificationDisplayed={toggleNotification} setToggleNotification={setToggleNotification}></LoaderNotification> :
+                    <></>
+            }
+            <form id={`${contactStyle.contactForm}`} onSubmit={onSubmitForm} acceptCharset='UTF-8' method='post'>
+                <div className={`${contactStyle.inputContainer}`}>
+                    <label htmlFor='name'>{languageResource.nameLabel}</label>
+                    <input onChange={onNameChange} aria-required={true} value={name} autoComplete='name' id='name' type='text' required></input>
+                </div>
+                <div className={`${contactStyle.inputContainer}`}>
+                    <label htmlFor='email'>{languageResource.emailLabel}</label>
+                    <input onChange={onEmailChange} aria-required={true} autoComplete='email' id='email' type='email' value={email} required></input>
+                </div>
+                <div className={`${contactStyle.inputContainer}`}>
+                    <label htmlFor='message'>{languageResource.messageLabel}</label>
+                    <textarea onChange={onMessageChange} aria-required={true} id='message' value={message} required></textarea>
+                </div>
+                <div className={`${contactStyle.inputContainer}`}>
+                    <input disabled={formState !== FormStates.INPUT} className={`${contactStyle.submitButton}`} role='button' type='submit' value={"SEND"}></input>
+                </div>
+
+            </form>
+        </>
+    );
+}
+
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
+function LoaderNotification({ notificationText, isNotificationDisplayed = false, setToggleNotification }) {
+    const [shouldDisplay, setShouldDisplay] = useState(isNotificationDisplayed);
+
+    const onCancelButtonClicked = () => {
+        setShouldDisplay(false);
+        setToggleNotification(false)
+    }
+    return (
+        <>
+            {shouldDisplay === true ?
+                <div className={`${contactStyle.notificationCont}`}>
+                    <div className={`${contactStyle.notificationContent}`}>
+                    <div>
+                        <img width={40} height={40} src='/miscellaneous/information.svg' alt='Notification Icon'></img>
+                    </div>
+                    <div>
+                        {notificationText}
+                    </div>
+                    <div>
+                        <img width={40} height={40} onClick={(e) => { e.preventDefault(); onCancelButtonClicked(); }} src="/miscellaneous/cancel.svg" alt="Close Notification container"></img>
+                    </div>
+                    </div>
+                    
+                </div> : <> </>
+            }
+        </>
     );
 }
