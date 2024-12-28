@@ -5,6 +5,8 @@ import experienceStyle from './experiences.module.css';
 import { sectionDataToExperienceSections } from "@/utilities/services/experiences/service";
 import { SkeletonLoadingAnimation } from "@/utilities/components/miscellaneous/loading";
 import AlertBox from "@/utilities/components/miscellaneous/alert";
+import { experienceResource } from "@/utilities/resources/en";
+import { experienceResourceSn } from "@/utilities/resources/sn";
 
 /**
  * I could have made this entire app purely in Javascript with Classes, Models, Services and so on and so forth but you would
@@ -14,11 +16,12 @@ import AlertBox from "@/utilities/components/miscellaneous/alert";
  * @returns 
  */
 export default function Experiences({ language = "en" }) {
+    const languageResourceObject = language === "en" ? experienceResource : experienceResourceSn;
     const [currentDisplayState, setCurrentDisplayState] = useState(displayState);
     const [sectionDataList, setSectionDataList] = useState([]);
 
     useEffect(() => {
-        fetchSectionData(setCurrentDisplayState, setSectionDataList, displayState)
+        fetchSectionData(setCurrentDisplayState, setSectionDataList, displayState, languageResourceObject)
     }, [sectionDataList]);
 
     return (

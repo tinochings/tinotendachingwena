@@ -10,6 +10,11 @@ export const enresource = {
 
 }
 
+export const experienceResource = {
+    networkError:  `Failed to retrieve the content for this webpage from the server due to error code:`,
+    networkErrorHeader: `Network error`
+}
+
 export const contactResource = {
     nameLabel: "Name",
     emailLabel: "Email",

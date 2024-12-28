@@ -10,6 +10,11 @@ export const snresource = {
 
 }
 
+export const experienceResourceSn = {
+    networkError:  `Ruzivo runoshandiswa pachiratidzo ichi chewebusaiti chakonewa kuturikwa nechikonzero chinotevera:`,
+    networkErrorHeader: `Masaisai akonewa kutrunura ruzivo`
+}
+
 export const contactResourceSn = {
     nameLabel: "Zita",
     emailLabel: "Email",
