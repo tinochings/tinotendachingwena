@@ -9,11 +9,11 @@ export default function NavigationBar({ language = "en" }) {
             <Navbar expand="md">
                 <Container>
                     <NavbarBrand as="a" href={language === "en" ? "/en/" : "/sn/"}>
-                        <img id="logo" src="/logo/WCLOGO1.png" alt="WC Brand logo" />
+                        <img id="logo" src="/images/logo/WCLOGO1.png" alt="WC Brand logo" />
                     </NavbarBrand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
-                        <img width={35} src="/miscellaneous/hamburger.svg" alt="Hambuger menu"></img>
+                        <img width={35} src="/images/miscellaneous/hamburger.svg" alt="Hambuger menu"></img>
                     </Navbar.Toggle>
 
                     <Navbar.Collapse className="justify-content-end">
@@ -30,16 +30,16 @@ export default function NavigationBar({ language = "en" }) {
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
                                     <Dropdown.Item title="Tinotenda Chingwena's Facebook page" aria-label="Opens Tinotenda Chingwena's facebook page" href="https://www.facebook.com/tchingwena1" target="_blank">
-                                        <img className="linkimg" src="/socialMedia/facebook.svg" alt="Facebook Logo" />
+                                        <img className="linkimg" src="/images/socialMedia/facebook.svg" alt="Facebook Logo" />
                                         <span>Facebook</span>
                                     </Dropdown.Item>
                                     <Dropdown.Item title="Tinotenda Chingwena's LinkedIn page" aria-label="Opens Tinotenda Chingwena's LinkedIn page"
                                         href="http://www.linkedin.com/in/tinotenda-chingwena-6034a6211" target="_blank">
-                                        <img src="/socialMedia/linkedin.svg" alt="Linkedin Logo" className="linkimg" />
+                                        <img src="/images/socialMedia/linkedin.svg" alt="Linkedin Logo" className="linkimg" />
                                         <span>LinkedIn</span>
                                     </Dropdown.Item>
                                     <Dropdown.Item title="Tinotenda Chingwena's Github page" aria-label="Opens Tinotenda Chingwena's GitHub page" href="https://github.com/tinochings" target="_blank">
-                                        <img src="/socialMedia/githublogo.svg" alt="Github Logo" className="linkimg" />
+                                        <img src="/images/socialMedia/githublogo.svg" alt="Github Logo" className="linkimg" />
                                         <span>Github</span>
                                     </Dropdown.Item>
                                 </Dropdown.Menu>
@@ -64,24 +64,23 @@ export function Footer({language = "en"}) {
                     <span className="h3">Tinotenda Chingwena - Full Stack Engineer</span>
                     <Col className="footerCol1">
                         
-                        {/* <span>Available at your convenience:</span> */}
                         <div className="footerImages">
                         
                         <a title="Navigate to contact form page" aria-label="Navigates to the contact form page" href={language === "en" ? "/en/contact" : "/sn/contact"}>
-                                <img src="/miscellaneous/contact.svg" alt="Contact Form Logo" className="linkimg"></img>
+                                <img src="/images/miscellaneous/contact.svg" alt="Contact Form Logo" className="linkimg"></img>
                             </a>
                             <a title="Email Tinotenda Chingwena" aria-label="Navigates to your email client" href="mailto:tinotendachings@gmail.com">
-                                <img src="/miscellaneous/email.svg" alt="Email Logo" className="linkimg"></img>
+                                <img src="/images/miscellaneous/email.svg" alt="Email Logo" className="linkimg"></img>
                             </a>
                             <a title="Tinotenda Chingwena's LinkedIn page" aria-label="Opens Tinotenda Chingwena's LinkedIn page"
                                 href="http://www.linkedin.com/in/tinotenda-chingwena-6034a6211" target="_blank">
-                                <img src="/socialMedia/linkedin.svg" alt="Linkedin Logo" className="linkimg" />
+                                <img src="/images/socialMedia/linkedin.svg" alt="Linkedin Logo" className="linkimg" />
                             </a>
                             <a title="Tinotenda Chingwena's Facebook page" aria-label="Opens Tinotenda Chingwena's facebook page" href="https://www.facebook.com/tchingwena1" target="_blank">
-                                <img className="linkimg" src="/socialMedia/facebook.svg" alt="Facebook Logo" />
+                                <img className="linkimg" src="/images/socialMedia/facebook.svg" alt="Facebook Logo" />
                             </a>
                             <a title="Tinotenda Chingwena's Github page" aria-label="Opens Tinotenda Chingwena's GitHub page" href="https://github.com/tinochings" target="_blank">
-                                <img src="/socialMedia/githublogo.svg" alt="Github Logo" className="linkimg" />
+                                <img src="/images/socialMedia/githublogo.svg" alt="Github Logo" className="linkimg" />
                             </a>
 
                         </div>

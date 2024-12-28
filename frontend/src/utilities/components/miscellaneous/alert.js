@@ -7,7 +7,7 @@ export default function AlertBox({ onCloseAlert, headerText, bodyText, language=
         <OverLay onCloseAlert={onCloseAlert}></OverLay>
         <div className={styles.errorAlert}>
             <div className={styles.cancelContainer}>
-                <img onClick={(e) => {e.preventDefault(); onCloseAlert();}} src="/miscellaneous/cancel.svg" alt="Close alert container"></img>
+                <img onClick={(e) => {e.preventDefault(); onCloseAlert();}} src="/images/miscellaneous/cancel.svg" alt="Close alert container"></img>
             </div>
             <div className={styles.headerTextCont}>
                 <h1 className={styles.headerText}>{headerText}</h1>

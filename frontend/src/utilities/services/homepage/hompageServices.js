@@ -37,7 +37,7 @@ export function deltaBeveragesCvItemSn() {
  * @returns instantiated Tiis Glam Studio CV ITEM 
  */
 export function tiisGlamStudioCvItem() {
-    let linkItem = new LinkItem('/experiences/#tiisglamstudio', 'Tiis Glam Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#tiisglamstudio', 'Tiis Glam Experience', '/images/miscellaneous/link.svg');
     let tiisGlamStudio = new Cvitem("01/2024 - 07/2024", "Tiis Glam Studio", "Software Engineer - Frontend & Backend",
         [linkItem], ['UML', 'Java', 'Thymeleaf', 'HTML & CSS', 'JavaScript', 'Spring Boot', 'Jetpack Compose', 'Kotlin & Android']);
 
@@ -56,7 +56,7 @@ export function tiisGlamStudioCvItem() {
  * @returns instantiated Tiis Glam Studio CV ITEM 
  */
 export function tiisGlamStudioCvItemSn() {
-    let linkItem = new LinkItem('/experiences/#tiisglamstudio', 'Tiis Glam Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#tiisglamstudio', 'Tiis Glam Experience', '/images/miscellaneous/link.svg');
     let tiisGlamStudio = new Cvitem("01/2024 - 07/2024", "Tiis Glam Studio", "Software Engineer - Frontend & Backend",
         [linkItem], ['UML', 'Java', 'Thymeleaf', 'HTML & CSS', 'JavaScript', 'Spring Boot', 'Jetpack Compose', 'Kotlin & Android']);
 
@@ -75,7 +75,7 @@ export function tiisGlamStudioCvItemSn() {
  * @returns instantiated Zvevatsunga Steel & Plumbing CV ITEM 
  */
 export function zvevatsungaSteelAndPlumbingCvItem() {
-    let linkItem = new LinkItem('/experiences/#zvevatsunga', 'Zvevatsunga Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#zvevatsunga', 'Zvevatsunga Experience', '/images/miscellaneous/link.svg');
     let zvevatsunga = new Cvitem("08/2023 - 03/2024", "Zvevatsunga Steel & Plumbing", "WEB DEVELOPER - FRONT-END & BACK END",
         [linkItem], ['Java', 'Bootstrap', 'Thymeleaf', 'HTML & CSS', 'JavaScript', 'Spring Boot']);
 
@@ -92,7 +92,7 @@ export function zvevatsungaSteelAndPlumbingCvItem() {
  * @returns instantiated Zvevatsunga Steel & Plumbing CV ITEM 
  */
 export function zvevatsungaSteelAndPlumbingCvItemSn() {
-    let linkItem = new LinkItem('/experiences/#zvevatsunga', 'Zvevatsunga Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#zvevatsunga', 'Zvevatsunga Experience', '/images/miscellaneous/link.svg');
     let zvevatsunga = new Cvitem("08/2023 - 03/2024", "Zvevatsunga Steel & Plumbing", "WEB DEVELOPER - FRONT-END & BACK END",
         [linkItem], ['Java', 'Bootstrap', 'Thymeleaf', 'HTML & CSS', 'JavaScript', 'Spring Boot']);
 
@@ -109,7 +109,7 @@ export function zvevatsungaSteelAndPlumbingCvItemSn() {
  * @returns instantiated Trin Media CV ITEM 
  */
 export function trinMediaCvItem() {
-    let linkItem = new LinkItem('/experiences/#trinmedia', 'Trin Media Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#trinmedia', 'Trin Media Experience', '/images/miscellaneous/link.svg');
     let trinMedia = new Cvitem("05/2023 - 07/2023", "Trin Media Consultancy Agency", "SOFTWARE PROGRAMMER",
         [linkItem], ['Java', 'Bootstrap', 'Thymeleaf', 'HTML & CSS', 'JavaScript', 'Spring Boot']);
 
@@ -126,7 +126,7 @@ export function trinMediaCvItem() {
  * @returns instantiated Trin Media CV ITEM 
  */
 export function trinMediaCvItemSn() {
-    let linkItem = new LinkItem('/experiences/#trinmedia', 'Trin Media Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#trinmedia', 'Trin Media Experience', '/images/miscellaneous/link.svg');
     let trinMedia = new Cvitem("05/2023 - 07/2023", "Trin Media Consultancy Agency", "SOFTWARE PROGRAMMER",
         [linkItem], ['Java', 'Bootstrap', 'Thymeleaf', 'HTML & CSS', 'JavaScript', 'Spring Boot']);
 
@@ -143,7 +143,7 @@ export function trinMediaCvItemSn() {
  * @returns instantiated Poets Kingdom CV ITEM 
  */
 export function poetsKingdomCvItem() {
-    let linkItem = new LinkItem('/experiences/#poetskingdom', 'Poets Kingdom Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#poetskingdom', 'Poets Kingdom Experience', '/images/miscellaneous/link.svg');
     let poetsKingdomLinkItem = new LinkItem('https://github.com/tinochings/PoetsKingdom', 'Poets Kingdom Source Code', '/miscellaneous/link.svg')
     let poetsKingdom = new Cvitem("05/2023 - Ongoing", "Open Source Project", "Android Developer",
         [poetsKingdomLinkItem, linkItem], ['XML','MVVM', 'Kotlin', 'Android', 'Jetpack Compose']);
@@ -160,7 +160,7 @@ export function poetsKingdomCvItem() {
  * @returns instantiated Poets Kingdom CV ITEM 
  */
 export function poetsKingdomCvItemSn() {
-    let linkItem = new LinkItem('/experiences/#poetskingdom', 'Poets Kingdom Experience', '/miscellaneous/link.svg');
+    let linkItem = new LinkItem('/experiences/#poetskingdom', 'Poets Kingdom Experience', '/images/miscellaneous/link.svg');
     let poetsKingdomLinkItem = new LinkItem('https://github.com/tinochings/PoetsKingdom', 'Poets Kingdom Source Code', '/miscellaneous/link.svg')
     let poetsKingdom = new Cvitem("05/2023 - Ongoing", "Open Source Project", "Android Developer",
         [poetsKingdomLinkItem, linkItem], ['XML','MVVM', 'Kotlin', 'Android', 'Jetpack Compose']);
