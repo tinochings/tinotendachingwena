@@ -14,10 +14,10 @@ export const contactResourceSn = {
     nameLabel: "Zita",
     emailLabel: "Email",
     messageLabel: "Mashoko Ekutumira",
-    statementMessage: `Kusimbisa pasi pose nehunyanzvi weku gadzira zvishandamurunhare`,
+    statementMessage: `Kusimbisa pasi pose nehunyanzvi weku gadzira mashandamurunhare`,
     contactMe: "Ndibatei",
-    contactText: `I am available for all software related opportunities. Feel free to contact me where it conveniences you:`,
-    failedNotificationText: `Unfortunately, your request could not be sent. If the problem persists, kindly email me on: 
+    contactText: `Pane zvose zveku gadzira mashandamurunhare ndinobatika nguva dzose. Ndibatei paka kurerukirai:`,
+    failedNotificationText: `Shoko renyu harina kukwanisa kutumirwa kwandiri. Dambudziko iri rikaramba riripo nditumirei email paemail address inoti: 
                     tinotendachings@gmail.com`,
-    networkFailure: "A network error was encountered. Check your internet connectivity and try again."
+    networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare ."
 }
