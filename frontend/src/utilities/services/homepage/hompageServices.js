@@ -144,7 +144,7 @@ export function trinMediaCvItemSn() {
  */
 export function poetsKingdomCvItem() {
     let linkItem = new LinkItem('/experiences/#poetskingdom', 'Poets Kingdom Experience', '/images/miscellaneous/link.svg');
-    let poetsKingdomLinkItem = new LinkItem('https://github.com/tinochings/PoetsKingdom', 'Poets Kingdom Source Code', '/miscellaneous/link.svg')
+    let poetsKingdomLinkItem = new LinkItem('https://github.com/tinochings/PoetsKingdom', 'Poets Kingdom Source Code', '/images/miscellaneous/link.svg')
     let poetsKingdom = new Cvitem("05/2023 - Ongoing", "Open Source Project", "Android Developer",
         [poetsKingdomLinkItem, linkItem], ['XML','MVVM', 'Kotlin', 'Android', 'Jetpack Compose']);
 
@@ -161,7 +161,7 @@ export function poetsKingdomCvItem() {
  */
 export function poetsKingdomCvItemSn() {
     let linkItem = new LinkItem('/experiences/#poetskingdom', 'Poets Kingdom Experience', '/images/miscellaneous/link.svg');
-    let poetsKingdomLinkItem = new LinkItem('https://github.com/tinochings/PoetsKingdom', 'Poets Kingdom Source Code', '/miscellaneous/link.svg')
+    let poetsKingdomLinkItem = new LinkItem('https://github.com/tinochings/PoetsKingdom', 'Poets Kingdom Source Code', '/images/miscellaneous/link.svg')
     let poetsKingdom = new Cvitem("05/2023 - Ongoing", "Open Source Project", "Android Developer",
         [poetsKingdomLinkItem, linkItem], ['XML','MVVM', 'Kotlin', 'Android', 'Jetpack Compose']);
 
