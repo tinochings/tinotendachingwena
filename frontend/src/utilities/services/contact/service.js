@@ -33,18 +33,22 @@ export function submitContactForm(name, email, message, setFormState, setToggleN
 async function postRequest(requestBody, csrfToken, languageResourceObject) {
 
     const headerObject = {
-        headers: { 'X-XSRF-TOKEN': csrfToken, 'Accept': 'application/json', 'Content-Type': 'application/json', },
+        headers: { 'X-XSRF-TOKEN': csrfToken, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: 'POST',
         body: requestBody
     };
+
     try {
-        const request = await fetch("http://localhost:3000/api/contact/form", headerObject);
+        const request = await fetch("/api/contact/form", headerObject);
         let response = await request.json();
-        return new Promise((resolve) => (resolve({ state: FormStates.SENT, textResponse: response.message })));
+        if (request.ok){
+            return new Promise((resolve) => (resolve({ state: FormStates.SENT, textResponse: response.message })));
+        } else {
+            return new Promise((resolve) => (resolve({ state: FormStates.SENT, textResponse: response.bodyText})));
+        }
     } catch (error) {
         return new Promise((resolve) => resolve({ state: FormStates.SENT, textResponse: languageResourceObject.networkFailure }));
     }
-
 }
 
 /**
