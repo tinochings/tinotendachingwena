@@ -19,6 +19,11 @@ public class ContactApiService implements ContractApiServiceContract {
         this.contactFormEmailSender = contactFormEmailSender;
     }
 
+    /**
+     * Sends a contact form request to tinotendachings@gmail.com. This method retries 3 times
+     * before failing and logging a warning
+     * @param contactForm validated contact form
+     */
     @Async
     @Override
     public void sendContactForm(ContactForm contactForm){
