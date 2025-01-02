@@ -12,7 +12,9 @@ export const enresource = {
 
 export const experienceResource = {
     networkError:  `Failed to retrieve the content for this webpage from the server due to error code:`,
-    networkErrorHeader: `Network error`
+    networkErrorHeader: `Network error`,
+    retrievalError: 'Retrieval Error',
+    retrievalErrorResponse: `An error occurred whilst trying to receive experiences information. The error status code observed is: `
 }
 
 export const contactResource = {
