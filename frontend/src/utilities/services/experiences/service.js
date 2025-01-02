@@ -11,7 +11,7 @@ export const displayState = { DisplayState: ViewState.LoadingScreen, AlertState:
  * @param {*} displayState 
  */
 export function fetchSectionData(setCurrentDisplayState, setSectionDataList, displayState, languageResourceObject) {
-    const sectionDataListResponse = getAllSetionData(languageResourceObject);
+    const sectionDataListResponse = getAllSectionData(languageResourceObject);
     sectionDataListResponse.then((sectionData) => {
         if (Array.isArray(sectionData)) {
             if (sectionData.length === 0) {
@@ -31,17 +31,18 @@ export function fetchSectionData(setCurrentDisplayState, setSectionDataList, dis
  * 
  * @returns an array of JSON Objects if network call was successful else -1 is returned
  */
-async function getAllSetionData(languageResourceObject) {
+async function getAllSectionData(languageResourceObject) {
     let responseStatus = 500;
     try {
-        const response = await fetch("http://localhost:8080/api/experiences/");
+        const response = await fetch(`/api/experiences/${languageResourceObject.lang}`);
+        const responseJson = await response.json();
         if (response.status === 200) {
-            const responseJson = await response.json();
             return responseJson;
         }
         responseStatus = response.status;
+        return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.retrievalError, bodyText: `${languageResourceObject.retrievalErrorResponse} ${responseStatus}` }));
     } catch (error) {
-        return new Promise((resolve, _reject) => resolve({headerText: languageResourceObject.networkErrorHeader, bodyText : `${languageResourceObject.networkError} ${responseStatus}`}));
+        return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.networkErrorHeader, bodyText: `${languageResourceObject.networkError} ${responseStatus}` }));
     }
 }
 
@@ -54,7 +55,8 @@ async function getAllSetionData(languageResourceObject) {
  *  projectImages : Array<JSON OBJECT> JSON OBJECT = { firstImage : String, secondImage:String, firstImageAltText : String, secondImageAltText : String}
  *  projectAbout : String,
  *  projectDescription : String,
- *  projectLink : JSON OBJECT JSON OBJECT = { url, label, urlText}
+ *  projectLink : Array<JSON OBJECT> JSON OBJECT = { url, label, urlText}
+ * N.B the key attribute is the index of the array because the array position is guaranteed not to change and is therefore unique to that item
  * }
  * @param {*} sectionData array of section information used for experiences
  * @returns 
@@ -62,7 +64,7 @@ async function getAllSetionData(languageResourceObject) {
 export function sectionDataToExperienceSections(sectionData = [], experienceStyle) {
 
     return sectionData.length <= 0 ? [] : sectionData.map((dataItem, index) => (
-        <section key={index} id={dataItem.projectId} className="container">
+        <section id={dataItem.projectId} className={`container ${experienceStyle.section}`} key={`${index}`}>
             <div className={`${experienceStyle.projectItem}`}>
                 <h1>{dataItem.projectName}</h1>
                 {dataItem.projectImages.length > 0 ?
@@ -87,7 +89,15 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
                     </Carousel> : <></>}
                 <p className={`${experienceStyle.spacing} ${experienceStyle.application_about}`}>{dataItem.projectAbout}</p>
                 <p className={`${experienceStyle.spacing}`}>{dataItem.projectDescription}</p>
-                <a aria-label={dataItem.projectLink.label} href={dataItem.projectLink.url} target="_blank">{dataItem.projectLink.urlText}</a>
+                {
+                    dataItem.projectLink.length > 0 ? dataItem.projectLink.map((projectLinkItem, projectLinkItemIndex) => (
+                        <div key={`projectLink${projectLinkItemIndex}`}>
+                        <a aria-label={projectLinkItem.label} href={projectLinkItem.url} target="_blank">{projectLinkItem.urlText}</a>
+                        <br></br>
+                        </div>
+                    )) : []
+                }
+
             </div>
         </section>
     ));
