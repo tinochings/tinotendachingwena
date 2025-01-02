@@ -1,5 +1,6 @@
 package tinotendachingwena.website;
 
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,6 +12,7 @@ import tinotendachingwena.website.handlers.SpaCsrfTokenHandler;
 
 @Configuration
 @EnableWebSecurity
+@EnableCaching
 public class SecurityConfig {
 
     @Bean
