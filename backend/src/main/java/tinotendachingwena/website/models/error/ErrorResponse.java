@@ -2,7 +2,9 @@ package tinotendachingwena.website.models.error;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class ErrorResponse {
+import java.io.Serializable;
+
+public class ErrorResponse implements Serializable {
 
     @NotBlank
     private String headerText;

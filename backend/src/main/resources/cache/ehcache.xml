@@ -16,4 +16,13 @@
         </expiry>
         <heap>2</heap>
     </cache>
+
+    <cache alias="rateLimiterCache">
+        <key-type>java.lang.String</key-type>
+        <value-type>io.github.bucket4j.Bucket</value-type>
+        <expiry>
+            <ttl unit="hours">1</ttl>
+        </expiry>
+        <heap>100</heap>
+    </cache>
 </config>
