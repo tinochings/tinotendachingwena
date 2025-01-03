@@ -1,0 +1,151 @@
+/* introduction section */
+#aboutmetext{
+  display: flex;
+  justify-content: center;
+}
+#fullname {
+  font-weight: bold;
+}
+#personalLink{
+  color: #0000EE;
+}
+#developer {
+  font-style: italic;
+}
+#personalimage {
+  border-radius: 50%;
+  border-color: var(--text_color);
+  border-width: 5px;
+  border-style: solid;
+  height: 200px;
+  width: auto;
+}
+#personalImageCont {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--margin_top_val);
+  max-height: 220px;
+}
+#statement {
+  display: flex;
+  justify-content: left;
+}
+.logoParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 150px;
+  width: 150px;
+}
+.logoParent div:first-child{
+  height: 100px;
+  display: flex;
+  min-height: 100px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logoParent div:nth-child(2){
+  max-height: 70px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.logoParent img{
+  height: auto;
+  background-color: white;
+  max-height: 100%;
+  width: 100px;
+}
+.logoParent span {
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+#gridCont{
+  display: grid;
+  row-gap: 25px;
+  column-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  grid-template-rows: repeat(3, auto);
+  justify-items: center;
+}
+#cvCont, #aboutme, .engineeringCont, .engineeringLogos, #cvListCont{
+  margin-top: var(--margin_top_val);
+}
+#aboutme {
+  border-radius: 15px;
+}
+.engineeringCont, .engineeringLogos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  flex-wrap: wrap;
+}
+.engineeringCont{
+  flex-direction: column;
+}
+.engineeringLogos{
+  width: 100%;
+  gap: 50px;
+  flex-direction: row;
+}
+.cvHeaderCont{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+/* Mobile Design */
+@media screen and (max-width: 1000px) {
+  .frameworksCont {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .introductionRow{
+    display: grid;
+    grid-template-columns: 100%;
+  } 
+  #cvListCont{
+    padding-left: 0px;
+  }
+  .frameworksCont {
+    margin-top: var(--margin_top_val);
+  }
+  .engineeringCont span{
+    text-align: center;
+  }
+}
+@media screen and (max-width: 576px) {
+  
+  #gridCont{
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+  }
+  .logoParent div:first-child{
+    height: 100px;
+  }
+  .logoParent div:nth-child(2){
+    max-height: 90px;
+  }
+  .logoParent {
+    height: 150px;
+    width: 100px;
+  }
+  .cvHeaderCont{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
