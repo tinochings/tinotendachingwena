@@ -27,7 +27,7 @@ public class ExperiencesAPI {
         if(!language.equals("en") || !language.equals("sn"))
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
-        ProjectItem[] projectItems = experienceAPIService.getExperiencesEn(language);
+        ProjectItem[] projectItems = experienceAPIService.getExperiences(language);
         if (projectItems != null)
             return new ResponseEntity<>(projectItems, HttpStatus.OK);
 
