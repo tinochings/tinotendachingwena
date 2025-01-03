@@ -29,9 +29,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-section {
-  margin-top: var(--margin_top_val);
-}
 
 * {
   font-family: 'Helvetica', sans-serif;
