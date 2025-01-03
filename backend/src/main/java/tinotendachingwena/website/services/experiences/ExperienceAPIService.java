@@ -24,7 +24,7 @@ public class ExperienceAPIService {
      * @return an array of project items
      */
     @Cacheable(cacheNames = "experiencesCache", key = "#language", unless = "#result == null")
-    public ProjectItem[] getExperiencesEn(String language){
+    public ProjectItem[] getExperiences(String language){
         Gson gson = new GsonBuilder().create();
         ClassPathResource classPathResource;
         if (language.equals("en"))
