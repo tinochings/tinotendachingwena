@@ -9,7 +9,7 @@ const isDev = phase === PHASE_DEVELOPMENT_SERVER;
         unoptimized: true
       },
       output: 'export',
-      reactStrictMode: isDev ? true : false
+      reactStrictMode: true
     };
 
     return nextConfig;

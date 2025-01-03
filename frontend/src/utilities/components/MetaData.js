@@ -9,8 +9,8 @@ export default function MetaData({ title, description }) {
             <meta name="robots" content="max-image-preview:large"></meta>
             <meta name="title" content={`${title}`}></meta>
             {description !== undefined ? <meta name="description" content={description} /> : <meta name="description" content={title} />}
-            <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon" sizes="any" />
-            <link rel="apple-touch-icon" href="/favicon/favicon.ico" />
+            <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon" sizes="any" />
+            <link rel="apple-touch-icon" href="/images/favicon/favicon.ico" />
             <title>{title}</title>
         </>
     );

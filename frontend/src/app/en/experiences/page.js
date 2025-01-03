@@ -16,7 +16,7 @@ import { experienceResourceSn } from "@/utilities/resources/sn";
  * @returns 
  */
 export default function Experiences({ language = "en" }) {
-    const languageResourceObject = language === "en" ? experienceResource : experienceResourceSn;
+    const languageResourceObject = language === "en" ? {...experienceResource, lang : "en"} : {...experienceResourceSn, lang:"sn"};
     const [currentDisplayState, setCurrentDisplayState] = useState(displayState);
     const [sectionDataList, setSectionDataList] = useState([]);
 

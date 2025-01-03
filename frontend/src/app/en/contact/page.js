@@ -36,16 +36,16 @@ function ContactColumn({ languageResource }) {
             </Row>
             <Row className={`${contactStyle.contactImagesCont}`}>
                 <div title="Tinotenda Chingwena's Facebook page" aria-label="Opens Tinotenda Chingwena's facebook page" href="https://www.facebook.com/tchingwena1" target="_blank">
-                    <img src="/socialMedia/facebook.svg" alt="Facebook Logo" />
+                    <img src="/images/socialMedia/facebook.svg" alt="Facebook Logo" />
                     <span>Tinotenda Chingwena</span>
                 </div>
                 <div title="Tinotenda Chingwena's LinkedIn page" aria-label="Opens Tinotenda Chingwena's LinkedIn page"
                     href="http://www.linkedin.com/in/tinotenda-chingwena-6034a6211" target="_blank">
-                    <img src="/socialMedia/linkedin.svg" alt="Linkedin Logo" />
+                    <img src="/images/socialMedia/linkedin.svg" alt="Linkedin Logo" />
                     <span>Tinotenda Chingwena</span>
                 </div>
                 <div title="Tinotenda Chingwena's Github page" aria-label="Opens Tinotenda Chingwena's GitHub page" href="https://github.com/tinochings" target="_blank">
-                    <img src="/socialMedia/githublogo.svg" alt="Github Logo" />
+                    <img src="/images/socialMedia/githublogo.svg" alt="Github Logo" />
                     <span>Tinochings</span>
                 </div>
             </Row>
@@ -136,13 +136,13 @@ function LoaderNotification({ notificationText, isNotificationDisplayed = false,
                 <div className={`${contactStyle.notificationCont}`}>
                     <div className={`${contactStyle.notificationContent}`}>
                     <div>
-                        <img width={40} height={40} src='/miscellaneous/information.svg' alt='Notification Icon'></img>
+                        <img width={40} height={40} src='/images/miscellaneous/information.svg' alt='Notification Icon'></img>
                     </div>
                     <div>
                         {notificationText}
                     </div>
                     <div>
-                        <img width={40} height={40} onClick={(e) => { e.preventDefault(); onCancelButtonClicked(); }} src="/miscellaneous/cancel.svg" alt="Close Notification container"></img>
+                        <img width={40} height={40} onClick={(e) => { e.preventDefault(); onCancelButtonClicked(); }} src="/images/miscellaneous/cancel.svg" alt="Close Notification container"></img>
                     </div>
                     </div>
                     

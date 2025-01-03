@@ -80,7 +80,7 @@ function ConvertArrayToListItems({arrayToConvert, listType}, ){
                         <ul className={`${componentsStyle.cvItemSkillsUl}`}>
                         {arrayToConvert.map((item, index) => 
                                 <li key={index} className={`${componentsStyle.cvItemLinkListItem}`}>
-                                    <img src={item.linkImage} alt={item.linkImage === '/miscellaneous/link.svg' ? 'Link available' : 'Link unavailable'}></img>
+                                    <img src={item.linkImage} alt={item.linkImage === '/images/miscellaneous/link.svg' ? 'Link available' : 'Link unavailable'}></img>
                                     <a className={`menu-item ${componentsStyle.cvAnchor}`} href={item.link} target='_blank'>{item.linkText}</a>
                                 </li>
                             )}
