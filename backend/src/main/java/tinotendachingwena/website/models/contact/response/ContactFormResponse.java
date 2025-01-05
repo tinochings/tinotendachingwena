@@ -6,6 +6,9 @@ public class ContactFormResponse implements Serializable {
 
     private String message;
 
+    public ContactFormResponse() {
+    }
+
     public ContactFormResponse(String message) {
         this.message = message;
     }
