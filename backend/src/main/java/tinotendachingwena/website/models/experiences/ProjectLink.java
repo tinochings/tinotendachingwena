@@ -1,6 +1,7 @@
 package tinotendachingwena.website.models.experiences;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class ProjectLink implements Serializable {
 
@@ -39,5 +40,16 @@ public class ProjectLink implements Serializable {
 
     public void setUrlText(String urlText) {
         this.urlText = urlText;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof ProjectLink that)) return false;
+        return Objects.equals(label, that.label) && Objects.equals(url, that.url) && Objects.equals(urlText, that.urlText);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(label, url, urlText);
     }
 }

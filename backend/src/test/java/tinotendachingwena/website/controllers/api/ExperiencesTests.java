@@ -3,10 +3,8 @@ package tinotendachingwena.website.controllers.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.MockedConstruction;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +18,7 @@ import tinotendachingwena.website.utilities.StringUtility;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Arrays;
 import java.util.Objects;
 
 import static org.mockito.Mockito.when;
@@ -43,10 +42,15 @@ public class ExperiencesTests {
     @Test
     public void testNullMethodArgument() throws Exception{
         mockMvc.perform(get("/api/experiences/")).andExpect(status().isNotFound());
+
+        assert cacheManager.getCache(StringUtility.experiencesCacheName).get("en") == null;
+        assert cacheManager.getCache(StringUtility.experiencesCacheName).get("sn") == null;
     }
     @Test
     public void testInvalidLanguage() throws Exception {
         mockMvc.perform(get("/api/experiences/vmccccc")).andExpect(status().isNotFound());
+        assert cacheManager.getCache(StringUtility.experiencesCacheName).get("en") == null;
+        assert cacheManager.getCache(StringUtility.experiencesCacheName).get("sn") == null;
     }
 
     @Test
@@ -57,6 +61,8 @@ public class ExperiencesTests {
             when(mock.exists()).thenReturn(true);
         })) {
             mockMvc.perform(get("/api/experiences/en")).andExpect(status().is5xxServerError());
+            assert cacheManager.getCache(StringUtility.experiencesCacheName).get("en") == null;
+            assert cacheManager.getCache(StringUtility.experiencesCacheName).get("sn") == null;
         }
     }
 
@@ -71,6 +77,7 @@ public class ExperiencesTests {
                     andExpect(status().isOk()).andReturn().getResponse();
 
             ProjectItem[] projectItemSent = objectMapper.readValue(response.getContentAsString(), ProjectItem[].class);
+            assert Arrays.equals((ProjectItem[])cacheManager.getCache(StringUtility.experiencesCacheName).get("en").get(), projectItemSent);
             assert projectItemSent.length == 1;
         }
     }
@@ -86,6 +93,25 @@ public class ExperiencesTests {
                     andExpect(status().isOk()).andReturn().getResponse();
 
             ProjectItem[] projectItemSent = objectMapper.readValue(response.getContentAsString(), ProjectItem[].class);
+            assert Arrays.equals((ProjectItem[])cacheManager.getCache(StringUtility.experiencesCacheName).get("en").get(), projectItemSent);
+            assert projectItemSent.length == 7;
+            assert projectItemSent[0].getProjectId().equals("madzinza");
+            assert projectItemSent[0].getProjectImages()[0].getSecondImage().equals("/images/projectsDone/madzinza/totems.png");
+        }
+    }
+
+    @Test
+    public void testLoadManyProjectsItemSn() throws Exception{
+        File file = new File("src/test/resources/db/projects.json");
+        try(MockedConstruction<ClassPathResource> mockedClasspathResource = Mockito.mockConstruction(ClassPathResource.class, (mock, context) -> {
+            when(mock.getInputStream()).thenReturn(new FileInputStream(file));
+            when(mock.exists()).thenReturn(true);
+        })) {
+            MockHttpServletResponse response = mockMvc.perform(get("/api/experiences/sn")).
+                    andExpect(status().isOk()).andReturn().getResponse();
+
+            ProjectItem[] projectItemSent = objectMapper.readValue(response.getContentAsString(), ProjectItem[].class);
+            assert Arrays.equals((ProjectItem[])cacheManager.getCache(StringUtility.experiencesCacheName).get("sn").get(), projectItemSent);
             assert projectItemSent.length == 7;
             assert projectItemSent[0].getProjectId().equals("madzinza");
             assert projectItemSent[0].getProjectImages()[0].getSecondImage().equals("/images/projectsDone/madzinza/totems.png");
