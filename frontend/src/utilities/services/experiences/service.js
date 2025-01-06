@@ -14,13 +14,9 @@ export function fetchSectionData(setCurrentDisplayState, setSectionDataList, dis
     const sectionDataListResponse = getAllSectionData(languageResourceObject);
     sectionDataListResponse.then((sectionData) => {
         if (Array.isArray(sectionData)) {
-            if (sectionData.length === 0) {
+            setSectionDataList(sectionData);
+            setCurrentDisplayState({ ...displayState, DisplayState: ViewState.DefaultScreen });
 
-            }
-            else {
-                setSectionDataList(sectionData);
-                setCurrentDisplayState({ ...displayState, DisplayState: ViewState.DefaultScreen });
-            }
         } else if (typeof sectionData === "object") {
             setCurrentDisplayState({ DisplayState: ViewState.Alert, AlertState: { headerText: sectionData.headerText, bodyText: sectionData.bodyText } });
         }
@@ -92,8 +88,8 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
                 {
                     dataItem.projectLink.length > 0 ? dataItem.projectLink.map((projectLinkItem, projectLinkItemIndex) => (
                         <div key={`projectLink${projectLinkItemIndex}`}>
-                        <a aria-label={projectLinkItem.label} href={projectLinkItem.url} target="_blank">{projectLinkItem.urlText}</a>
-                        <br></br>
+                            <a aria-label={projectLinkItem.label} href={projectLinkItem.url} target="_blank">{projectLinkItem.urlText}</a>
+                            <br></br>
                         </div>
                     )) : []
                 }
