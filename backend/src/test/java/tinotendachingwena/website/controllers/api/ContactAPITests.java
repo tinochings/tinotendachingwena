@@ -1,6 +1,5 @@
 package tinotendachingwena.website.controllers.api;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import tinotendachingwena.website.models.contact.forms.ContactForm;
 import tinotendachingwena.website.models.contact.response.ContactFormResponse;
 import tinotendachingwena.website.models.error.ErrorResponse;
@@ -29,7 +27,7 @@ public class ContactAPITests {
     @Autowired
     private MockMvc mockMvc;
     private final ContactForm contactForm = new ContactForm();
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @BeforeEach
     public void setup(){
