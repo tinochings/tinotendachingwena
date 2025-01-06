@@ -4,9 +4,9 @@
   "projectName": "Madzinza",
   "projectImages": [
     {
-      "firstImage": " /images/projectsDone/madzinza/logo.png",
+      "firstImage": "/images/projectsDone/madzinza/logo.png",
       "firstImageAltText": "Madzinza Logo",
-      "secondImage": " /images/projectsDone/madzinza/totems.png",
+      "secondImage": "/images/projectsDone/madzinza/totems.png",
       "secondImageAltText": "Madzinza totems page"
     }
   ],

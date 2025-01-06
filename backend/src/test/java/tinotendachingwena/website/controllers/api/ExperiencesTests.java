@@ -2,6 +2,7 @@ package tinotendachingwena.website.controllers.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedConstruction;
 import org.mockito.Mockito;
@@ -20,6 +21,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -80,6 +84,30 @@ public class ExperiencesTests {
             assert Arrays.equals((ProjectItem[])cacheManager.getCache(StringUtility.experiencesCacheName).get("en").get(), projectItemSent);
             assert projectItemSent.length == 1;
         }
+    }
+
+    @Test
+    public void testLoadOneProjectItemMultipleThreads() throws Exception{
+        final ExecutorService executor = Executors.newFixedThreadPool(10);
+
+        for (int i = 0; i < 10; i++) {
+            executor.execute(() -> {
+                File file = new File("src/test/resources/db/oneProject.json");
+                try (MockedConstruction<ClassPathResource> mockedClasspathResource = Mockito.mockConstruction(ClassPathResource.class, (mock, context) -> {
+                    when(mock.getInputStream()).thenReturn(new FileInputStream(file));
+                    when(mock.exists()).thenReturn(true);
+                })) {
+                    mockMvc.perform(get("/api/experiences/en")).andExpect(status().isOk()).andReturn().getResponse();
+                    executor.shutdown();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
+        Assertions.assertTrue(executor.awaitTermination(1, TimeUnit.MINUTES));
+        ProjectItem[] projectItems = (ProjectItem[])cacheManager.getCache(StringUtility.experiencesCacheName).get("en").get();
+        assert projectItems != null;
+        assert projectItems.length == 1;
     }
 
     @Test
