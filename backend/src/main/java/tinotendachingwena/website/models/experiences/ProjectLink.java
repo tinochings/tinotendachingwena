@@ -8,6 +8,9 @@ public class ProjectLink implements Serializable {
     private String url;
     private String urlText;
 
+    public ProjectLink() {
+    }
+
     public ProjectLink(String label, String url, String urlText) {
         this.label = label;
         this.url = url;

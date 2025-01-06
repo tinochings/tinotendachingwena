@@ -24,7 +24,7 @@ public class ExperiencesAPI {
 
     @GetMapping(value = "/{language}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ProjectItem[]> projects(@NonNull @PathVariable String language){
-        if(!language.equals("en") || !language.equals("sn"))
+        if(!language.equals("en") && !language.equals("sn"))
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
         ProjectItem[] projectItems = experienceAPIService.getExperiences(language);

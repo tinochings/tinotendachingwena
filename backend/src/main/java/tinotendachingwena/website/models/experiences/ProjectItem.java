@@ -15,6 +15,9 @@ public class ProjectItem implements Serializable {
     private String projectDescription;
     private ProjectLink[] projectLink;
 
+    public ProjectItem() {
+    }
+
     public ProjectItem(String projectId, String projectName, ProjectImage[] projectImages, String projectAbout,
                        String projectDescription, ProjectLink[] projectLink) {
         this.projectId = projectId;
