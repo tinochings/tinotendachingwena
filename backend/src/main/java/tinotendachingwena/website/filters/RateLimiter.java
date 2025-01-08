@@ -13,6 +13,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import tinotendachingwena.website.models.error.ErrorResponse;
+import tinotendachingwena.website.utilities.StringUtility;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -52,7 +53,7 @@ public class RateLimiter implements Filter {
                     httpResponse.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
                     ErrorResponse errorResponse = new ErrorResponse("Too many requests",
                             "Too many requests within a short period of time. Please wait a minute and " +
-                                    "then try again", HttpStatus.TOO_MANY_REQUESTS.name());
+                                    "then try again", String.valueOf(HttpStatus.TOO_MANY_REQUESTS.value()));
 
                     httpResponse.getWriter().write(new Gson().toJson(errorResponse));
                     httpResponse.getWriter().flush();
@@ -80,8 +81,7 @@ public class RateLimiter implements Filter {
      * @return
      */
     private Optional<Bucket> retrieveBucketFromCache(String cacheKey) {
-        String cacheName = "rateLimiterCache";
-        Cache bucketCache = cacheManager.getCache(cacheName);
+        Cache bucketCache = cacheManager.getCache(StringUtility.rateLimiterCacheName);
         if (bucketCache != null) {
             Cache.ValueWrapper valueWrapper = bucketCache.get(cacheKey);
             if (valueWrapper != null && valueWrapper.get() instanceof Bucket bucket) {
@@ -97,12 +97,11 @@ public class RateLimiter implements Filter {
      * @param bucket
      */
     private void insertBucketIntoCache(String cacheKey, Bucket bucket){
-        String cacheName = "rateLimiterCache";
-        Cache bucketCache = cacheManager.getCache(cacheName);
+        Cache bucketCache = cacheManager.getCache(StringUtility.rateLimiterCacheName);
         if (bucketCache != null) {
             bucketCache.put(cacheKey, bucket);
         }else {
-            logger.error("Cache {} is not found by the cache manager. Rate limiting cannot work.", cacheName);
+            logger.error("Cache {} is not found by the cache manager. Rate limiting cannot work.", StringUtility.rateLimiterCacheName);
         }
     }
 }
