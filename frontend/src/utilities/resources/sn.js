@@ -26,5 +26,5 @@ export const contactResourceSn = {
     contactText: `Pane zvose zveku gadzira mashandamurunhare ndinobatika nguva dzose. Ndibatei paka kurerukirai:`,
     failedNotificationText: `Shoko renyu harina kukwanisa kutumirwa kwandiri. Dambudziko iri rikaramba riripo nditumirei email paemail address inoti: 
                     tinotendachings@gmail.com`,
-    networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare ."
+    networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare."
 }
