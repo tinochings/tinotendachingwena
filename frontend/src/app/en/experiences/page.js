@@ -25,7 +25,7 @@ export default function Experiences({ language = "en" }) {
     }, [sectionDataList]);
 
     return (
-        <ViewStateToDisplay currentDisplayState={currentDisplayState} sectionData={sectionDataList} language={language} />
+        <ViewStateToDisplay currentDisplayState={currentDisplayState} sectionData={sectionDataList} languageObject={languageResourceObject} />
     );
 }
 
@@ -50,7 +50,7 @@ function ExperienceSection({ sectionData = [] }) {
  * @param {*} param0 
  * @returns 
  */
-function ViewStateToDisplay({ currentDisplayState, sectionData = [], language }) {
+function ViewStateToDisplay({ currentDisplayState, sectionData = [], languageObject }) {
     switch (currentDisplayState.DisplayState) {
         case ViewState.DefaultScreen:
             return (
@@ -65,11 +65,11 @@ function ViewStateToDisplay({ currentDisplayState, sectionData = [], language })
             );
         case ViewState.Alert:
             return (
-                <AlertBox language={language} onCloseAlert={() => {}} headerText={currentDisplayState.AlertState.headerText} bodyText={currentDisplayState.AlertState.bodyText}/>
+                <AlertBox languageObject={languageObject} onCloseAlert={() => {}} headerText={currentDisplayState.AlertState.headerText} bodyText={currentDisplayState.AlertState.bodyText}/>
             );
         default : 
             return (
-                <AlertBox onCloseAlert={() => {}} language={language} headerText={currentDisplayState.AlertState.headerText} bodyText={currentDisplayState.AlertState.bodyText}/>
+                <AlertBox onCloseAlert={() => {}} language={languageObject} headerText={currentDisplayState.AlertState.headerText} bodyText={currentDisplayState.AlertState.bodyText}/>
             );    
     }
 

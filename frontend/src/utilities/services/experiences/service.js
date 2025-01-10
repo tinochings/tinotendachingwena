@@ -18,7 +18,9 @@ export function fetchSectionData(setCurrentDisplayState, setSectionDataList, dis
             setCurrentDisplayState({ ...displayState, DisplayState: ViewState.DefaultScreen });
 
         } else if (typeof sectionData === "object") {
-            setCurrentDisplayState({ DisplayState: ViewState.Alert, AlertState: { headerText: sectionData.headerText, bodyText: sectionData.bodyText } });
+            setCurrentDisplayState({ DisplayState: ViewState.Alert, 
+                AlertState: { headerText: sectionData.headerText === undefined ? "Failed to retrieve error" : sectionData.headerText, 
+                    bodyText: sectionData.bodyText === undefined ? 'Could not retrieve error response' : sectionData.bodyText } });
         }
     })
 }
@@ -38,7 +40,7 @@ async function getAllSectionData(languageResourceObject) {
         responseStatus = response.status;
         return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.retrievalError, bodyText: `${languageResourceObject.retrievalErrorResponse} ${responseStatus}` }));
     } catch (error) {
-        return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.networkErrorHeader, bodyText: `${languageResourceObject.networkError} ${responseStatus}` }));
+        return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.networkErrorHeader, bodyText: `${languageResourceObject.networkError} No internet connection` }));
     }
 }
 

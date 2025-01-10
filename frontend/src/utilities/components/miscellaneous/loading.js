@@ -7,7 +7,7 @@ export function SkeletonLoadingAnimation({ experienceStyle }) {
         <Container className={`${experienceStyle.spacing}`}>
             <div className={`${experienceStyle.projectItem}`}>
                 <h1 className={`${loaderStyle.skeletonH1} ${loaderStyle.skeleton}`}></h1>
-                <Carousel interval={null} prevIcon={<CarouselNavigationIcon skeletonStyle={loaderStyle} isPreviousIcon={true} />} nextIcon={<CarouselNavigationIcon isPreviousIcon={false} />} className={`${experienceStyle.spacing}`}>
+                <Carousel interval={null} prevIcon={<CarouselNavigationIcon isPreviousIcon={true} />} nextIcon={<CarouselNavigationIcon isPreviousIcon={false} />} className={`${experienceStyle.spacing}`}>
                     <Carousel.Item>
                         <Row className={`${experienceStyle.spacing} ${experienceStyle.imageRow}`}>
                             <Col className="vertical-centre">

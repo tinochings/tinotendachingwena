@@ -13,8 +13,10 @@ export const snresource = {
 export const experienceResourceSn = {
     networkError:  `Ruzivo runoshandiswa pachiratidzo ichi chewebusaiti chakonewa kuturikwa nechikonzero chinotevera:`,
     networkErrorHeader: `Masaisai akonewa kutrunura ruzivo`,
-    retrievalError: 'Retrieval Error',
-    retrievalErrorResponse: `An error occurred whilst trying to receive experiences information. The error status code observed is: `
+    retrievalError: 'Ruzivo rwakonewa kuturunurwa',
+    retrievalErrorResponse: `Webusaiti haina kukwanisa kuturuna ruzivo rwenhoroondo nechikonzero chinotevera:`,
+    alertLeft : "Turunura zvakare",
+    alertRight: "Dzokerai pekutanga"
 }
 
 export const contactResourceSn = {

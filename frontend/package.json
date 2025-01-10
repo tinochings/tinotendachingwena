@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:experience" : "jest --testPathPattern=__tests__/experiences/experienceIntegrated.test.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
