@@ -3,7 +3,7 @@ package tinotendachingwena.website.filters;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.local.LockFreeBucket;
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedConstruction;
 import org.mockito.Mockito;
@@ -42,8 +42,8 @@ public class RateLimitFilterTests {
     private final ContactForm contactForm = new ContactForm("","","");
     private final String toPost = "{ name: a, email:a@a.com, message:a}";
 
-    @AfterEach
-    public void destruct() {
+    @BeforeEach
+    public void setup() {
         cacheManager.getCache(StringUtility.rateLimiterCacheName).clear();
     }
     @Test
@@ -56,7 +56,6 @@ public class RateLimitFilterTests {
         assert cacheManager.getCache(StringUtility.rateLimiterCacheName).get(remoteAddress) != null;
 
         Bucket bucket = (Bucket) cacheManager.getCache(StringUtility.rateLimiterCacheName).get(remoteAddress).get();
-
         assert bucket.getAvailableTokens() == 4;
     }
 
