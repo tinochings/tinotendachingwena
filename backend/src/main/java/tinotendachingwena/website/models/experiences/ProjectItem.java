@@ -2,6 +2,7 @@ package tinotendachingwena.website.models.experiences;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class ProjectItem implements Serializable {
 
@@ -14,6 +15,9 @@ public class ProjectItem implements Serializable {
     private String projectAbout;
     private String projectDescription;
     private ProjectLink[] projectLink;
+
+    public ProjectItem() {
+    }
 
     public ProjectItem(String projectId, String projectName, ProjectImage[] projectImages, String projectAbout,
                        String projectDescription, ProjectLink[] projectLink) {
@@ -83,5 +87,19 @@ public class ProjectItem implements Serializable {
                 ", projectDescription='" + projectDescription + '\'' +
                 ", projectLink=" + Arrays.toString(projectLink) +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof ProjectItem that)) return false;
+        return Objects.equals(projectId, that.projectId) && Objects.equals(projectName, that.projectName) &&
+                Objects.deepEquals(projectImages, that.projectImages) && Objects.equals(projectAbout, that.projectAbout)
+                && Objects.equals(projectDescription, that.projectDescription)
+                && Objects.deepEquals(projectLink, that.projectLink);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(projectId, projectName, Arrays.hashCode(projectImages), projectAbout, projectDescription, Arrays.hashCode(projectLink));
     }
 }

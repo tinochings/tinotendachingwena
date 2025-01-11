@@ -6,3 +6,6 @@ build/
 
 #node
 node/
+
+#jest
+coverage/

@@ -14,15 +14,13 @@ export function fetchSectionData(setCurrentDisplayState, setSectionDataList, dis
     const sectionDataListResponse = getAllSectionData(languageResourceObject);
     sectionDataListResponse.then((sectionData) => {
         if (Array.isArray(sectionData)) {
-            if (sectionData.length === 0) {
+            setSectionDataList(sectionData);
+            setCurrentDisplayState({ ...displayState, DisplayState: ViewState.DefaultScreen });
 
-            }
-            else {
-                setSectionDataList(sectionData);
-                setCurrentDisplayState({ ...displayState, DisplayState: ViewState.DefaultScreen });
-            }
         } else if (typeof sectionData === "object") {
-            setCurrentDisplayState({ DisplayState: ViewState.Alert, AlertState: { headerText: sectionData.headerText, bodyText: sectionData.bodyText } });
+            setCurrentDisplayState({ DisplayState: ViewState.Alert, 
+                AlertState: { headerText: sectionData.headerText === undefined ? "Failed to retrieve error" : sectionData.headerText, 
+                    bodyText: sectionData.bodyText === undefined ? 'Could not retrieve error response' : sectionData.bodyText } });
         }
     })
 }
@@ -42,7 +40,7 @@ async function getAllSectionData(languageResourceObject) {
         responseStatus = response.status;
         return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.retrievalError, bodyText: `${languageResourceObject.retrievalErrorResponse} ${responseStatus}` }));
     } catch (error) {
-        return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.networkErrorHeader, bodyText: `${languageResourceObject.networkError} ${responseStatus}` }));
+        return new Promise((resolve, _reject) => resolve({ headerText: languageResourceObject.networkErrorHeader, bodyText: `${languageResourceObject.networkError} No internet connection` }));
     }
 }
 
@@ -92,8 +90,8 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
                 {
                     dataItem.projectLink.length > 0 ? dataItem.projectLink.map((projectLinkItem, projectLinkItemIndex) => (
                         <div key={`projectLink${projectLinkItemIndex}`}>
-                        <a aria-label={projectLinkItem.label} href={projectLinkItem.url} target="_blank">{projectLinkItem.urlText}</a>
-                        <br></br>
+                            <a aria-label={projectLinkItem.label} href={projectLinkItem.url} target="_blank">{projectLinkItem.urlText}</a>
+                            <br></br>
                         </div>
                     )) : []
                 }

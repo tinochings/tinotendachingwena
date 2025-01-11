@@ -10,6 +10,9 @@ public class ProjectImage implements Serializable {
     private String secondImage;
     private String secondImageAltText;
 
+    public ProjectImage() {
+    }
+
     public ProjectImage(String firstImage, String firstImageAltText, String secondImage, String secondImageAltText) {
         this.firstImage = firstImage;
         this.firstImageAltText = firstImageAltText;

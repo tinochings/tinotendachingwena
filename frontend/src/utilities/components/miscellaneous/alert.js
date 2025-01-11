@@ -1,7 +1,7 @@
 'use client';
 import styles from './alert.module.css'
 
-export default function AlertBox({ onCloseAlert, headerText, bodyText, language="en" }){
+export default function AlertBox({ onCloseAlert, headerText, bodyText, languageObject }){
     return (
         <>
         <OverLay onCloseAlert={onCloseAlert}></OverLay>
@@ -19,10 +19,10 @@ export default function AlertBox({ onCloseAlert, headerText, bodyText, language=
             </div>
             <div className={styles.alertAction}>
                 <div>
-                    <a aria-label='Reloads experience page' href={language === 'en' ? '/en/experiences' : '/sn/experiences'}>Reload Page</a>
+                    <a aria-label='Reloads experience page' href={languageObject.lang === 'en' ? '/api/experiences/en' : '/api/experiences/sn'}>{languageObject.alertLeft}</a>
                 </div>
                 <div>
-                    <a aria-label='Navigates to the home page' href={language === 'en' ? '/en/' : '/sn/'}>Return Home</a>
+                    <a aria-label='Navigates to the home page' href={languageObject.lang === 'en' ? '/en/' : '/sn/'}>{languageObject.alertRight}</a>
                 </div>
             </div>
         </div>
