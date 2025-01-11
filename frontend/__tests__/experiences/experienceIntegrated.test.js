@@ -73,7 +73,7 @@ describe("Staus error", () => {
         await (waitFor(() => {
             expect(screen.getByText("Turunura zvakare")).toBeInTheDocument();
             expect(screen.getByText("Dzokerai pekutanga")).toBeInTheDocument();
-            expect(screen.getByText("Webusaiti haina kukwanisa kuturuna ruzivo rwenhoroondo nechikonzero chinotevera: 400")).toBeInTheDocument();
+            expect(screen.getByText("Webusaiti haina kukwanisa kuturunura ruzivo rwenhoroondo nechikonzero chinotevera: 400")).toBeInTheDocument();
         }))
     })
 

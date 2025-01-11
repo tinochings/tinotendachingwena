@@ -13,7 +13,7 @@ export const metaDataResourceExperiences = {
     description: `Detailed outline of software development projects that Tinotenda Chingwena has created.`
 }
 export const snresource = {
-    statement1: `Kungava kugadzira zviratidzo zvino shanda murunhare nemacomuter kana kugadzira sevha, hazvinei, ndiri nyanzvi uru. 
+    statement1: `Kungava kugadzira zviratidzo zvino shanda murunhare nemacomuter, kana kugadzira sevha, hazvinei, ndiri nyanzvi huru. 
     Ndino gadzira shandamurunhare(software) inochengetedzeka zvakanaka uye unoshanda nemazvo. Ndino vavarira kugadzira mashandamurunhare
     maningi. Ndine dzidzo huru yandaka wana kubudikidza nechikoro chandakaenda. Ndine Bachelors Of Science in`,
     statement2: `Hunyanzvi uhu huno woneka mune zvinhu zvandaka batisisa pakugadzira mashandamurunhare. Uye zve, webusaiti yamuri kuona
@@ -26,9 +26,9 @@ export const snresource = {
 
 export const experienceResourceSn = {
     networkError:  `Ruzivo runoshandiswa pachiratidzo ichi chewebusaiti chakonewa kuturikwa nechikonzero chinotevera:`,
-    networkErrorHeader: `Masaisai akonewa kutrunura ruzivo`,
+    networkErrorHeader: `Masaisai akonewa kuturunura ruzivo`,
     retrievalError: 'Ruzivo rwakonewa kuturunurwa',
-    retrievalErrorResponse: `Webusaiti haina kukwanisa kuturuna ruzivo rwenhoroondo nechikonzero chinotevera:`,
+    retrievalErrorResponse: `Webusaiti haina kukwanisa kuturunura ruzivo rwenhoroondo nechikonzero chinotevera:`,
     alertLeft : "Turunura zvakare",
     alertRight: "Dzokerai pekutanga"
 }
@@ -39,7 +39,7 @@ export const contactResourceSn = {
     messageLabel: "Mashoko Ekutumira",
     statementMessage: `Kusimbisa pasi pose nehunyanzvi weku gadzira mashandamurunhare`,
     contactMe: "Ndibatei",
-    contactText: `Pane zvose zveku gadzira mashandamurunhare ndinobatika nguva dzose. Ndibatei paka kurerukirai:`,
+    contactText: `Pane zveku gadzira mashandamurunhare ndinobatika nguva dzose. Ndibatei paka kurerukirai:`,
     failedNotificationText: `Shoko renyu harina kukwanisa kutumirwa kwandiri. Dambudziko iri rikaramba riripo nditumirei email paemail address inoti: 
                     tinotendachings@gmail.com`,
     networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare."

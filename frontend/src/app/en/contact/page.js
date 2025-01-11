@@ -6,6 +6,7 @@ import { contactResource, metaDataResourceContact } from '@/utilities/resources/
 import { contactResourceSn } from '@/utilities/resources/sn';
 import { useState } from 'react';
 import { FormStates } from '@/utilities/services/contact/service';
+import MetaData from '@/utilities/components/MetaData';
 
 export default function Contact({ language = "en" }) {
     let languageResourceObject = language === "en" ? contactResource : contactResourceSn;
