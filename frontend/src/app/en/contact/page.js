@@ -2,7 +2,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import contactStyle from './contact.module.css'
 import { submitContactForm } from '@/utilities/services/contact/service';
-import { contactResource } from '@/utilities/resources/en';
+import { contactResource, metaDataResourceContact } from '@/utilities/resources/en';
 import { contactResourceSn } from '@/utilities/resources/sn';
 import { useState } from 'react';
 import { FormStates } from '@/utilities/services/contact/service';
@@ -11,6 +11,8 @@ export default function Contact({ language = "en" }) {
     let languageResourceObject = language === "en" ? contactResource : contactResourceSn;
 
     return (
+        <>
+        <MetaData title={metaDataResourceContact.title} description={metaDataResourceContact.description}/>
         <main>
             <Container>
                 <h1 id={`${contactStyle.headerText}`}>{languageResourceObject.statementMessage}</h1>
@@ -24,6 +26,7 @@ export default function Contact({ language = "en" }) {
                 </Row>
             </Container>
         </main>
+        </>
     );
 }
 

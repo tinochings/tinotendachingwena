@@ -1,3 +1,17 @@
+export const metaDataResourceHome = {
+    title: `Tinotenda Chingwena Full Stack Software Engineer`,
+    description: `Tinotenda Chingwena is a passionate, innovative, and efficient software engineer with experience in Android application development,
+     server development, and web development. He is adept in technologies such as React, Spring Boot, Android SDK, and Jetpack Compose.`
+}
+export const metaDataResourceContact = {
+    title: `Contact Tinotenda Chingwena`,
+    description: `Get in touch with Tinotenda Chingwena for all software development opportunities. He is immediately available for all software 
+    development opportunities.`
+}
+export const metaDataResourceExperiences = {
+    title: `Tinotenda Chingwenas software experience`,
+    description: `Detailed outline of software development projects that Tinotenda Chingwena has created.`
+}
 export const snresource = {
     statement1: `Kungava kugadzira zviratidzo zvino shanda murunhare nemacomuter kana kugadzira sevha, hazvinei, ndiri nyanzvi uru. 
     Ndino gadzira shandamurunhare(software) inochengetedzeka zvakanaka uye unoshanda nemazvo. Ndino vavarira kugadzira mashandamurunhare
