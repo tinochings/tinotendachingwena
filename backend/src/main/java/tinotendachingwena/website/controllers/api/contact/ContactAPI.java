@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import tinotendachingwena.website.models.contact.forms.ContactForm;
 import tinotendachingwena.website.models.contact.response.ContactFormResponse;
 import tinotendachingwena.website.services.contact.api.ContactApiService;
+import tinotendachingwena.website.utilities.StringUtility;
 
 @RestController
 @RequestMapping("/api/contact")
@@ -21,7 +22,7 @@ public class ContactAPI {
     @PostMapping(value = "/form", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ContactFormResponse> contactForm(@Valid @RequestBody ContactForm contactForm){
         contactApiService.sendContactForm(contactForm);
-        return new ResponseEntity<>(new ContactFormResponse("Message sent successfully :)"), HttpStatus.OK);
+        return new ResponseEntity<>(new ContactFormResponse(StringUtility.contactFormSuccessMessage), HttpStatus.OK);
     }
 
 }

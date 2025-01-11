@@ -14,7 +14,9 @@ export const experienceResource = {
     networkError:  `Failed to retrieve the content for this webpage from the server due to error code:`,
     networkErrorHeader: `Network error`,
     retrievalError: 'Retrieval Error',
-    retrievalErrorResponse: `An error occurred whilst trying to receive experiences information. The error status code observed is: `
+    retrievalErrorResponse: `An error occurred whilst trying to receive experiences information. The error status code observed is:`,
+    alertLeft : "Reload Page",
+    alertRight: "Return Home",
 }
 
 export const contactResource = {

@@ -25,13 +25,19 @@ export function submitContactForm(name, email, message, setFormState, setToggleN
 }
 
 /**
- * 
+ * If there is a validation error this method receives an ErrorResponse object : 
+ * {
+ * headerText : String (NON NULL),
+ * bodyText : String (NON NULL),
+ * statusCode : String (NON NULL),
+ * positiveButtonAction : String (Nullable),
+ * negativeButtonAction : String (Nullable)
+ * }
  * @param {*} requestBody 
  * @param {*} csrfToken 
  * @returns an object with structure: {state : FormStates, textResponse : String }
  */
 async function postRequest(requestBody, csrfToken, languageResourceObject) {
-
     const headerObject = {
         headers: { 'X-XSRF-TOKEN': csrfToken, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: 'POST',

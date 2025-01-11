@@ -13,8 +13,10 @@ export const snresource = {
 export const experienceResourceSn = {
     networkError:  `Ruzivo runoshandiswa pachiratidzo ichi chewebusaiti chakonewa kuturikwa nechikonzero chinotevera:`,
     networkErrorHeader: `Masaisai akonewa kutrunura ruzivo`,
-    retrievalError: 'Retrieval Error',
-    retrievalErrorResponse: `An error occurred whilst trying to receive experiences information. The error status code observed is: `
+    retrievalError: 'Ruzivo rwakonewa kuturunurwa',
+    retrievalErrorResponse: `Webusaiti haina kukwanisa kuturuna ruzivo rwenhoroondo nechikonzero chinotevera:`,
+    alertLeft : "Turunura zvakare",
+    alertRight: "Dzokerai pekutanga"
 }
 
 export const contactResourceSn = {
@@ -26,5 +28,5 @@ export const contactResourceSn = {
     contactText: `Pane zvose zveku gadzira mashandamurunhare ndinobatika nguva dzose. Ndibatei paka kurerukirai:`,
     failedNotificationText: `Shoko renyu harina kukwanisa kutumirwa kwandiri. Dambudziko iri rikaramba riripo nditumirei email paemail address inoti: 
                     tinotendachings@gmail.com`,
-    networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare ."
+    networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare."
 }
