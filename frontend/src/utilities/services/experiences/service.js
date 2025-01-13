@@ -1,5 +1,12 @@
 import { Row, Col, Carousel } from "react-bootstrap";
 import { CarouselNavigationIcon } from "@/utilities/components/experiences/experiencesComponents";
+import experienceStyle from '@/app/en/experiences/experiences.module.css';
+export const defaultImageObject = {
+    style: experienceStyle,
+    imageUrl: "",
+    alt: "",
+    onCloseImageView: () => {}
+}
 
 export const ViewState = { DefaultScreen: Symbol(0), LoadingScreen: Symbol(1), Alert: Symbol(2) };
 export const displayState = { DisplayState: ViewState.LoadingScreen, AlertState: { headerText: "", bodyText: "" } };
@@ -32,7 +39,7 @@ export function fetchSectionData(setCurrentDisplayState, setSectionDataList, dis
 async function getAllSectionData(languageResourceObject) {
     let responseStatus = 500;
     try {
-        const response = await fetch(`/api/experiences/${languageResourceObject.lang}`);
+        const response = await fetch(`http://localhost:8080/api/experiences/${languageResourceObject.lang}`);
         const responseJson = await response.json();
         if (response.status === 200) {
             return responseJson;
@@ -59,7 +66,7 @@ async function getAllSectionData(languageResourceObject) {
  * @param {*} sectionData array of section information used for experiences
  * @returns 
  */
-export function sectionDataToExperienceSections(sectionData = [], experienceStyle) {
+export function sectionDataToExperienceSections(sectionData = [], experienceStyle, onImageClicked) {
 
     return sectionData.length <= 0 ? [] : sectionData.map((dataItem, index) => (
         <section id={dataItem.projectId} className={`container ${experienceStyle.section}`} key={`${index}`}>
@@ -72,12 +79,13 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
                                 <Carousel.Item key={`ImageItem${imageItemIndex}`}>
                                     <Row className={`${experienceStyle.spacing} ${experienceStyle.imageRow}`}>
                                         <Col className="vertical-centre">
-                                            <img loading={imageItemIndex > 0 ? "lazy" : "eager"} className={`${experienceStyle.pictures}`} src={imageItem.firstImage} alt={imageItem.firstImageAltText}></img>
+                                            <img onClick={(e) => {e.preventDefault(); onImageClicked(imageItem.firstImage, imageItem.firstImageAltText);}} loading={imageItemIndex > 0 ? "lazy" : "eager"} className={`${experienceStyle.pictures}`} src={imageItem.firstImage} alt={imageItem.firstImageAltText}></img>
                                         </Col>
                                         <Col className="vertical-centre">
                                             {
                                                 typeof imageItem.secondImage === "string" && imageItem.secondImage.length > 0 ? <img className={`${experienceStyle.pictures}`}
-                                                    src={imageItem.secondImage} alt={imageItem.secondImageAltText} loading={imageItemIndex > 0 ? "lazy" : "eager"}></img> : <></>
+                                                    src={imageItem.secondImage} alt={imageItem.secondImageAltText} loading={imageItemIndex > 0 ? "lazy" : "eager"}
+                                                    onClick={(e) => {e.preventDefault(); onImageClicked(imageItem.secondImage, imageItem.secondImageAltText);}}></img> : <></>
                                             }
                                         </Col>
                                     </Row>
@@ -103,4 +111,8 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
             </div>
         </section>
     ));
+}
+
+export function clearImageView() {
+
 }
