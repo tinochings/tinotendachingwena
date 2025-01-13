@@ -1,5 +1,12 @@
 import { Row, Col, Carousel } from "react-bootstrap";
 import { CarouselNavigationIcon } from "@/utilities/components/experiences/experiencesComponents";
+import experienceStyle from '@/app/en/experiences/experiences.module.css';
+export const defaultImageObject = {
+    style: experienceStyle,
+    imageUrl: "",
+    alt: "",
+    onCloseImageView: () => {}
+}
 
 export const ViewState = { DefaultScreen: Symbol(0), LoadingScreen: Symbol(1), Alert: Symbol(2) };
 export const displayState = { DisplayState: ViewState.LoadingScreen, AlertState: { headerText: "", bodyText: "" } };
@@ -59,7 +66,7 @@ async function getAllSectionData(languageResourceObject) {
  * @param {*} sectionData array of section information used for experiences
  * @returns 
  */
-export function sectionDataToExperienceSections(sectionData = [], experienceStyle) {
+export function sectionDataToExperienceSections(sectionData = [], experienceStyle, onImageClicked) {
 
     return sectionData.length <= 0 ? [] : sectionData.map((dataItem, index) => (
         <section id={dataItem.projectId} className={`container ${experienceStyle.section}`} key={`${index}`}>
@@ -72,12 +79,13 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
                                 <Carousel.Item key={`ImageItem${imageItemIndex}`}>
                                     <Row className={`${experienceStyle.spacing} ${experienceStyle.imageRow}`}>
                                         <Col className="vertical-centre">
-                                            <img loading={imageItemIndex > 0 ? "lazy" : "eager"} className={`${experienceStyle.pictures}`} src={imageItem.firstImage} alt={imageItem.firstImageAltText}></img>
+                                            <img onClick={(e) => {e.preventDefault(); onImageClicked(imageItem.firstImage, imageItem.firstImageAltText);}} loading={imageItemIndex > 0 ? "lazy" : "eager"} className={`${experienceStyle.pictures}`} src={imageItem.firstImage} alt={imageItem.firstImageAltText}></img>
                                         </Col>
                                         <Col className="vertical-centre">
                                             {
                                                 typeof imageItem.secondImage === "string" && imageItem.secondImage.length > 0 ? <img className={`${experienceStyle.pictures}`}
-                                                    src={imageItem.secondImage} alt={imageItem.secondImageAltText} loading={imageItemIndex > 0 ? "lazy" : "eager"}></img> : <></>
+                                                    src={imageItem.secondImage} alt={imageItem.secondImageAltText} loading={imageItemIndex > 0 ? "lazy" : "eager"}
+                                                    onClick={(e) => {e.preventDefault(); onImageClicked(imageItem.secondImage, imageItem.secondImageAltText);}}></img> : <></>
                                             }
                                         </Col>
                                     </Row>
@@ -86,7 +94,11 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
                         }
                     </Carousel> : <></>}
                 <p className={`${experienceStyle.spacing} ${experienceStyle.application_about}`}>{dataItem.projectAbout}</p>
-                <p className={`${experienceStyle.spacing}`}>{dataItem.projectDescription}</p>
+                {
+                    dataItem.projectDescription.split("\n\n").length > 1 ? dataItem.projectDescription.split("\n\n").map((paragraph, paragraphIndex) => (
+                        <p className={`${experienceStyle.spacing}`} key={`paragraph${paragraphIndex}`}>{paragraph}</p>
+                    )) : <p className={`${experienceStyle.spacing}`}>{dataItem.projectDescription}</p>
+                }
                 {
                     dataItem.projectLink.length > 0 ? dataItem.projectLink.map((projectLinkItem, projectLinkItemIndex) => (
                         <div key={`projectLink${projectLinkItemIndex}`}>
@@ -99,4 +111,8 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
             </div>
         </section>
     ));
+}
+
+export function clearImageView() {
+
 }

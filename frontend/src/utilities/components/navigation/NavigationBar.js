@@ -19,10 +19,10 @@ export default function NavigationBar({ language = "en" }) {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav as="ul" className="ul">
                             <Nav.Item as="li" className="li">
-                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to Tinotenda's experiences" href={language === "en" ? "/en/experiences" : "/sn/experiences"}>{language === "en" ? "Experiences" : "Nhoroondo"}</Nav.Link>
+                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to contact form page" href={language === "en" ? "/en/contact" : "/sn/contact"}> {language === "en" ? "Contact" : "Ndibatei"}</Nav.Link>
                             </Nav.Item>
                             <Nav.Item as="li" className="li">
-                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to contact form page" href={language === "en" ? "/en/contact" : "/sn/contact"}> {language === "en" ? "Contact" : "Ndibatei"}</Nav.Link>
+                                <Nav.Link className="menu-item vertical-centre a" title="Navigate to Tinotenda's experiences" href={language === "en" ? "/en/experiences" : "/sn/experiences"}>{language === "en" ? "Experiences" : "Nhoroondo"}</Nav.Link>
                             </Nav.Item>
                             <Dropdown as="li" className="li">
                                 <Dropdown.Toggle title="Click to bring out socials container" className="menu-item a vertical-centre" id="socialsMenuLink" as="a" href="#">
@@ -55,7 +55,7 @@ export default function NavigationBar({ language = "en" }) {
     );
 };
 
-export function Footer({language = "en"}) {
+export function Footer({ language = "en" }) {
     return (
         <footer>
             <Container>
@@ -63,10 +63,10 @@ export function Footer({language = "en"}) {
                 <Row>
                     <span className="h3">Tinotenda Chingwena - Full Stack Engineer</span>
                     <Col className="footerCol1">
-                        
+
                         <div className="footerImages">
-                        
-                        <a title="Navigate to contact form page" aria-label="Navigates to the contact form page" href={language === "en" ? "/en/contact" : "/sn/contact"}>
+
+                            <a title="Navigate to contact form page" aria-label="Navigates to the contact form page" href={language === "en" ? "/en/contact" : "/sn/contact"}>
                                 <img src="/images/miscellaneous/contact.svg" alt="Contact Form Logo" className="linkimg"></img>
                             </a>
                             <a title="Email Tinotenda Chingwena" aria-label="Navigates to your email client" href="mailto:tinotendachings@gmail.com">
@@ -88,7 +88,7 @@ export function Footer({language = "en"}) {
                     <Col className="footerCol2">
                         <p>
                             User Interface coded in <span style={{ color: '#0000FF', fontWeight: 900 }}>Visual Studio Code</span> and built with <span style={{ color: '#000000', fontWeight: 700 }}>Next.js.</span>
-                            Server coded in InteliJ and built with <span style={{ color: '#008000', fontWeight: 900 }}>Spring Boot</span>. Source code can be found at <a style={{color: "mediumblue", fontWeight: 900}} href="https://github.com/tinochings/tinotendachingwena" target='_blank'>tinotendachingwena</a>
+                            Server coded in InteliJ and built with <span style={{ color: '#008000', fontWeight: 900 }}>Spring Boot</span>. Source code can be found at <a style={{ color: "mediumblue", fontWeight: 900 }} href="https://github.com/tinochings/tinotendachingwena" target='_blank'>tinotendachingwena</a>
                         </p>
                     </Col>
                 </Row>

@@ -20,7 +20,7 @@ describe("Network failure", () => {
 
         await (waitFor(() => {
             expect(container.getElementsByClassName(alertStyle.alertAction).item(0).firstChild.firstChild.textContent).toBe("Reload Page");
-            expect(container.getElementsByClassName(alertStyle.alertAction).item(0).firstChild.firstChild.href).toContain("/api/experiences/en");
+            expect(container.getElementsByClassName(alertStyle.alertAction).item(0).firstChild.firstChild.href).toContain("/en/experiences");
             expect(container.getElementsByClassName(alertStyle.alertAction).item(0).childNodes[1].firstChild.textContent).toBe("Return Home");
             expect(container.getElementsByClassName(alertStyle.alertAction).item(0).childNodes[1].firstChild.href).toContain("/en/");
             expect(container.getElementsByClassName(alertStyle.bodyText).item(0).textContent).toBe("Failed to retrieve the content for this webpage from the server due to error code: No internet connection");
@@ -34,7 +34,7 @@ describe("Network failure", () => {
 
         await (waitFor(() => {
             expect(container.getElementsByClassName(alertStyle.alertAction).item(0).firstChild.firstChild.textContent).toBe("Turunura zvakare");
-            expect(container.getElementsByClassName(alertStyle.alertAction).item(0).firstChild.firstChild.href).toContain("/api/experiences/sn");
+            expect(container.getElementsByClassName(alertStyle.alertAction).item(0).firstChild.firstChild.href).toContain("/sn/experiences");
             expect(container.getElementsByClassName(alertStyle.alertAction).item(0).childNodes[1].firstChild.textContent).toBe("Dzokerai pekutanga");
             expect(container.getElementsByClassName(alertStyle.alertAction).item(0).childNodes[1].firstChild.href).toContain("/sn/");
             expect(container.getElementsByClassName(alertStyle.bodyText).item(0).textContent).toBe("Ruzivo runoshandiswa pachiratidzo ichi chewebusaiti chakonewa kuturikwa nechikonzero chinotevera: No internet connection");
@@ -73,7 +73,7 @@ describe("Staus error", () => {
         await (waitFor(() => {
             expect(screen.getByText("Turunura zvakare")).toBeInTheDocument();
             expect(screen.getByText("Dzokerai pekutanga")).toBeInTheDocument();
-            expect(screen.getByText("Webusaiti haina kukwanisa kuturuna ruzivo rwenhoroondo nechikonzero chinotevera: 400")).toBeInTheDocument();
+            expect(screen.getByText("Webusaiti haina kukwanisa kuturunura ruzivo rwenhoroondo nechikonzero chinotevera: 400")).toBeInTheDocument();
         }))
     })
 
