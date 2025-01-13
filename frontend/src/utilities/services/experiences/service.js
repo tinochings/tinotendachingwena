@@ -86,7 +86,11 @@ export function sectionDataToExperienceSections(sectionData = [], experienceStyl
                         }
                     </Carousel> : <></>}
                 <p className={`${experienceStyle.spacing} ${experienceStyle.application_about}`}>{dataItem.projectAbout}</p>
-                <p className={`${experienceStyle.spacing}`}>{dataItem.projectDescription}</p>
+                {
+                    dataItem.projectDescription.split("\n\n").length > 1 ? dataItem.projectDescription.split("\n\n").map((paragraph, paragraphIndex) => (
+                        <p className={`${experienceStyle.spacing}`} key={`paragraph${paragraphIndex}`}>{paragraph}</p>
+                    )) : <p className={`${experienceStyle.spacing}`}>{dataItem.projectDescription}</p>
+                }
                 {
                     dataItem.projectLink.length > 0 ? dataItem.projectLink.map((projectLinkItem, projectLinkItemIndex) => (
                         <div key={`projectLink${projectLinkItemIndex}`}>
