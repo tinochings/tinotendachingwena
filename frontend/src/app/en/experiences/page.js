@@ -5,8 +5,11 @@ import experienceStyle from './experiences.module.css';
 import { sectionDataToExperienceSections } from "@/utilities/services/experiences/service";
 import { SkeletonLoadingAnimation } from "@/utilities/components/miscellaneous/loading";
 import AlertBox from "@/utilities/components/miscellaneous/alert";
-import { experienceResource } from "@/utilities/resources/en";
+import { experienceResource, metaDataResourceExperiences } from "@/utilities/resources/en";
 import { experienceResourceSn } from "@/utilities/resources/sn";
+import MetaData from "@/utilities/components/MetaData";
+import {ImageViewer } from "@/utilities/components/experiences/experiencesComponents";
+import { defaultImageObject } from "@/utilities/services/experiences/service";
 
 /**
  * I could have made this entire app purely in Javascript with Classes, Models, Services and so on and so forth but you would
@@ -22,10 +25,13 @@ export default function Experiences({ language = "en" }) {
 
     useEffect(() => {
         fetchSectionData(setCurrentDisplayState, setSectionDataList, displayState, languageResourceObject)
-    }, [sectionDataList]);
+    }, []);
 
     return (
+        <>
+        <MetaData title={metaDataResourceExperiences.title} description={metaDataResourceExperiences.description}/>
         <ViewStateToDisplay currentDisplayState={currentDisplayState} sectionData={sectionDataList} languageObject={languageResourceObject} />
+        </>
     );
 }
 
@@ -35,12 +41,26 @@ export default function Experiences({ language = "en" }) {
  * @returns 
  */
 function ExperienceSection({ sectionData = [] }) {
+    const [shouldDisplayImage, setShouldDisplayImage] = useState(false);
+    const [imageViewObject, setImageViewObject] = useState(defaultImageObject)
+
+    const onCancelButtonClicked = () => {
+        setShouldDisplayImage(false);
+        setImageViewObject({...imageViewObject, imageUrl: "", alt: ""})
+    }
+
+    const onImageClicked = (imageUrlText, altText) => {
+        setShouldDisplayImage(true);
+        setImageViewObject({...imageViewObject, imageUrl: imageUrlText, alt: altText, onCloseImageView: onCancelButtonClicked})
+    }
 
     return (
         <>
             {
-                sectionDataToExperienceSections(sectionData, experienceStyle)
+                sectionDataToExperienceSections(sectionData, experienceStyle, onImageClicked)
+                
             }
+            {shouldDisplayImage === true ? <ImageViewer imageViewObject={imageViewObject} /> : <> </>}
         </>
     );
 }
@@ -51,6 +71,7 @@ function ExperienceSection({ sectionData = [] }) {
  * @returns 
  */
 function ViewStateToDisplay({ currentDisplayState, sectionData = [], languageObject }) {
+
     switch (currentDisplayState.DisplayState) {
         case ViewState.DefaultScreen:
             return (

@@ -7,14 +7,14 @@ import {
   deltaBeveragesCvItem, poetsKingdomCvItem, tiisGlamStudioCvItem, trinMediaCvItem, zvevatsungaSteelAndPlumbingCvItem,
   deltaBeveragesCvItemSn, poetsKingdomCvItemSn, tiisGlamStudioCvItemSn, trinMediaCvItemSn, zvevatsungaSteelAndPlumbingCvItemSn
 } from "@/utilities/services/homepage/hompageServices";
-import { enresource } from "@/utilities/resources/en";
+import { enresource, metaDataResourceHome } from "@/utilities/resources/en";
 import { snresource } from "@/utilities/resources/sn";
 
 export default function Home({ language = "en" }) {
   let languageResourceObject = language === "en" ? enresource : snresource;
   return (
     <>
-      <MetaData title={"Title"}></MetaData>
+      <MetaData title={metaDataResourceHome.title} description={metaDataResourceHome.description}/>
       <IntroductionSection languageResource={languageResourceObject} />
       <CurriculumnVitae language={language} />
     </>

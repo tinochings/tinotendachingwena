@@ -19,7 +19,7 @@ export default function AlertBox({ onCloseAlert, headerText, bodyText, languageO
             </div>
             <div className={styles.alertAction}>
                 <div>
-                    <a aria-label='Reloads experience page' href={languageObject.lang === 'en' ? '/api/experiences/en' : '/api/experiences/sn'}>{languageObject.alertLeft}</a>
+                    <a aria-label='Reloads experience page' href={languageObject.lang === 'en' ? '/en/experiences' : '/sn/experiences'}>{languageObject.alertLeft}</a>
                 </div>
                 <div>
                     <a aria-label='Navigates to the home page' href={languageObject.lang === 'en' ? '/en/' : '/sn/'}>{languageObject.alertRight}</a>
