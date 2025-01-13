@@ -39,7 +39,7 @@ export function fetchSectionData(setCurrentDisplayState, setSectionDataList, dis
 async function getAllSectionData(languageResourceObject) {
     let responseStatus = 500;
     try {
-        const response = await fetch(`http://localhost:8080/api/experiences/${languageResourceObject.lang}`);
+        const response = await fetch(`/api/experiences/${languageResourceObject.lang}`);
         const responseJson = await response.json();
         if (response.status === 200) {
             return responseJson;
