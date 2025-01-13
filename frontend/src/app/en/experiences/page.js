@@ -23,7 +23,7 @@ export default function Experiences({ language = "en" }) {
 
     useEffect(() => {
         fetchSectionData(setCurrentDisplayState, setSectionDataList, displayState, languageResourceObject)
-    }, [sectionDataList]);
+    }, []);
 
     return (
         <>
@@ -55,6 +55,7 @@ function ExperienceSection({ sectionData = [] }) {
  * @returns 
  */
 function ViewStateToDisplay({ currentDisplayState, sectionData = [], languageObject }) {
+    console.log("called");
     switch (currentDisplayState.DisplayState) {
         case ViewState.DefaultScreen:
             return (
