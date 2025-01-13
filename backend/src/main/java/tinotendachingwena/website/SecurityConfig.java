@@ -5,6 +5,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -16,6 +17,7 @@ import tinotendachingwena.website.handlers.SpaCsrfTokenHandler;
 @Configuration
 @EnableWebSecurity
 @EnableCaching
+@EnableAsync(proxyTargetClass = true)
 public class SecurityConfig {
     private final CacheManager cacheManager;
 
