@@ -1,0 +1,139 @@
+@keyframes fadeInAnim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes l1 {
+    to {
+        opacity: 0.1
+    }
+}
+
+#headerText {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#cont {
+    margin-top: 50px;
+}
+
+.spacing {
+    margin-top: var(--margin_top_val);
+}
+
+.contactImagesCont {
+    margin-top: var(--margin_top_val);
+    gap: 25px;
+}
+
+.contactImagesCont img {
+    width: 50px;
+    height: 50px;
+}
+
+.contactImagesCont span {
+    margin-left: 15px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 7px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--off_white);
+    border-radius: 10px;
+    border-color: #EFE1CE;
+    border-style: groove;
+}
+
+#contactForm input {
+    min-height: 55px;
+}
+
+.submitButton {
+    background-color: var(--text_color) !important;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    max-width: 200px !important;
+}
+
+#contactForm textarea {
+    min-height: 150px;
+    font-size: 1em;
+}
+
+#contactForm label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inputContainer,
+.loader,
+.notificationCont {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25px;
+}
+
+/* Animation credit to https://css-loaders.com/classic/ */
+.loader {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    animation: l1 1.5s linear infinite alternate;
+}
+
+.notificationCont {
+    animation: fadeInAnim 1.2s ease-in 1;
+    margin-bottom: 25px;
+}
+
+.notificationContent {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EFE1CE;
+    border-radius: 15px;
+    min-height: 50px;
+    padding: 10px;
+    box-shadow: 4px 4px #f3eeee;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    #headerText {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #cont {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: var(--margin_top_val);
+    }
+
+    .inputContainer,
+    .notificationCont,
+    .loader {
+        padding: 0px 0px;
+    }
+}

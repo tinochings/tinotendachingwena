@@ -1,0 +1,17 @@
+[
+{
+  "projectId": "madzinza",
+  "projectName": "Madzinza",
+  "projectImages": [
+    {
+      "firstImage": "/images/projectsDone/madzinza/logo.png",
+      "firstImageAltText": "Madzinza Logo",
+      "secondImage": "/images/projectsDone/madzinza/totems.png",
+      "secondImageAltText": "Madzinza totems page"
+    }
+  ],
+  "projectAbout" : "",
+  "projectDescription" : "My first solo project. The design, functionality, translation, and text input into the application were all done by myself. Grown out of the frustration of the lack of Zimbabwean history documentation, I took it upon myself to encapsulate all credible information I could find digitally. It was a side project I started during the end-of-year break in my second year of university. I was a codehead eager to start a project by myself. I believed I had the skills to make an Android application, so I went on to do it. Madzinza was written in Java. It entails various custom algorithms I had to make to ensure a pleasing user experience. Madzinza Application was a passion project. I am dedicated to working on more projects like this one.",
+  "projectLink" : []
+}
+]

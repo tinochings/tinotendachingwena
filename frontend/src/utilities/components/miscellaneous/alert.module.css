@@ -1,0 +1,115 @@
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.overlay {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: grey;
+    overflow: hidden;
+    z-index: 1080;
+    opacity: 0.45;
+    left: 0;
+    top: 0;
+}
+.errorAlert {
+    display: block;
+    position: fixed;
+    top: calc(50% - 225px);
+    left: calc(50% - 225px);
+    background-color: white;
+    width: 450px;
+    min-height: 450px;
+    max-height: calc(100% - 25px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 2.5px 2.5px 0 grey;
+    opacity: 0;
+    z-index: 1081;
+    -webkit-animation: fadeInAnimation ease-in 0.8s;
+    animation: fadeInAnimation ease-in 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.cancelContainer{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.cancelContainer img {
+    height: 100%;
+}
+.headerTextCont{
+    margin-top: 20px;
+    height: 60px;
+}
+.bodyTextContainer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: calc(100% - 210px);
+    color: var(--text_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+.headerText, .bodyText{
+    width: 100%;
+    text-align: center;
+    color: var(--text_color);
+}
+.bodyText{
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    padding: 0 10px;
+}
+.alertAction{
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    position:absolute;
+    gap: 10px;
+    bottom: 10px;
+    height: 50px;
+    border-radius: 0px 5px;
+    padding: 3px;
+}
+.alertAction div{
+    width: 100%;
+    padding: 7px;
+    display: flex;
+    border-radius: 20px;
+    background-color: #EAE6EB;
+    box-shadow: 4px 4px #f3eeee;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+@media screen and (max-width : 500px) {
+    .errorAlert {
+        width: 90vw;
+        left: calc(50vw - 45vw);
+    }
+
+    /* .errorAlert a {
+        width: 95% !important;
+        font-size: 0.8em;
+    } */
+}

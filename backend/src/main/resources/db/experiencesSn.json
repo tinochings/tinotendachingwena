@@ -1,0 +1,130 @@
+[
+  {
+    "projectId": "tiisglamstudio",
+    "projectName": "Tii Hair Collection (Full Stack Web App & Android Client)",
+    "projectImages": [
+      {
+        "firstImage": "/images/projectsDone/tiisglam/logo.png",
+        "firstImageAltText": "Tii Hair Collection Logo",
+        "secondImage": " /images/projectsDone/tiisglam/homePc.png",
+        "secondImageAltText": "Tii Hair Collection home page"
+      },
+      {
+        "firstImage": "/images/projectsDone/tiisglam/homeMobile.png",
+        "firstImageAltText": "Tii Hair Collection home page mobile",
+        "secondImage": " /images/projectsDone/tiisglam/productsPc.png",
+        "secondImageAltText": "Tii Hair Collection products page"
+      },
+      {
+        "firstImage": "/images/projectsDone/tiisglam/productsMobile.png",
+        "firstImageAltText": "Tii Hair Collection products page mobile",
+        "secondImage": "/images/projectsDone/tiisglam/productPagePc.png",
+        "secondImageAltText": "Tii Hair Collection singular product page"
+      },
+      {
+        "firstImage": "/images/projectsDone/tiisglam/productPageMobile.png",
+        "firstImageAltText": "Tii Hair Collection singular product page mobile",
+        "secondImage": "/images/projectsDone/tiisglam/handshake.png",
+        "secondImageAltText": "UML Diagram for handshake protocol"
+      }
+    ],
+    "projectAbout" : "Tii Hair Collection offers trusted, premium wigs and hair-extensions with exquisite service and pristine quality",
+    "projectDescription" : "Tii Hair Collection (Web App and Android Client) has been the biggest project I have worked on. This project consisted of three phases: modelling, translating the model to software, and testing. I modelled the database schema, state transitions, client-server communication, and secure cryptographic handshake protocol with UML.\n\nThe web client was made with HTML5, CSS, Bootstrap, JavaScript and Thymeleaf. The web client was designed and made to be accessible. It featured an aesthetically pleasing, responsive and intuitive user interface. Furthermore, the web client was made with a mobile-first approach.\n\nThe administrative Android client was programmed in Kotlin. The user interface was programmed using Jetpack Compse with the MVVM(Model-View-View-Model) architecture. I prioritised user interface fluidity and component reusability. The view models were all made using the delegation design pattern. The delegation design pattern ensured no code duplication and coherence throughout the application. The Android client also featured session management and secure communication with the server using hybrid encryption. All RSA cryptographic keys for the client were securely stored in the Android keystore.\n\nThe server was programmed in Java using the Spring Boot framework. The server featured session management, secure account creation, secure administrator communication, rate-limiting post requests, cross-site request forgery protection, a secure ordering process, in-heap caching, efficient database management, and a safe multi-threaded environment. The server ensured secure communication with the Android client by using hybrid encryption. RSA was used for end-to-end encryption. AES Galois/Counter mode was used for symmetric encryption.  \n\nTo eliminate a man-in-the-middle attack, the server and client execute a secure handshake on a local development environment via a secure local internet connection. The Android client and the server are connected to the same controlled internet connection. The Android client connects to the server via its local IP address so that the handshake begins. The Android client's public key is stored in the secure JDK folder inaccessible to anyone but the server itself. A UML diagram is in the carousel on the 4th slide that represents how the handshake is executed.\n\n",
+    "projectLink" : []
+  },
+  {
+    "projectId": "poetskingdom",
+    "projectName": "Poets Kingdom (Open Source Android Application)",
+    "projectImages": [
+      {
+        "firstImage": "/images/projectsDone/poetskingdom/logo.png",
+        "firstImageAltText": "Poets Kingdom Logo",
+        "secondImage": "/images/projectsDone/poetskingdom/homeScreen.png",
+        "secondImageAltText": "Poets Kingdom home screen"
+      },
+      {
+        "firstImage": "/images/projectsDone/poetskingdom/createPoem.png",
+        "firstImageAltText": "Create a poem activity screen",
+        "secondImage": "/images/projectsDone/poetskingdom/poemActivity.png",
+        "secondImageAltText": "Edit a poem activity screen"
+      },
+      {
+        "firstImage": "/images/projectsDone/poetskingdom/myPoems.png",
+        "firstImageAltText": "List view of poem thumbnails",
+        "secondImage": "",
+        "secondImageAltText": ""
+      }
+    ],
+    "projectAbout" : "Poets Kingdom is available for download on my GitHub page. Create high-quality, aesthetically pleasing tailor-themed poems. Poetry is for the soul and deserves the most soulful look to that which you articulate best. Poets Kingdom allows you to incarnate the soul's desires into reality and is tailored specifically for mobile use.",
+    "projectDescription" : "Poets Kingdom is a solo open-source passion project I started at the end of my bachelor's degree. I am a lover of poetry, and I love writing poetry myself. Poets Kingdom is an application I made to help me design, view and write poems in a manner I see fit. Furthermore, it is tailor-made for mobile use. \n\nI noticed a severe lack of applications that help create customised themes and customised text fonts, so I created Poets Kingdom. It can produce high-quality images and PDF documents. It is an ongoing project. I am currently in the process of evolving my initial implementation of Poets Kingdom. You can view my progress on my GitHub profile.\n\nPoets Kingdom was made for Android OS. It is programmed in Kotlin. Initially, I created Poets Kingdom with an MVI(Model-View-Injection) implementation. However, I changed the design pattern to MVVM(Model-View-View-Model) as I migrated from XML to Jetpack Compose.\n\nThe user interface was programmed in approximately 90% Jetpack Compose and 10% XML. Each screen has its own View Model that reactively updates the user interface. \n\nPoets Kingdom features multi-threading to execute intensive tasks, such as saving a high-quality image or a PDF. Furthermore, I am currently working on scaling and multi-threading the image gallery for Poets Kingdom to relieve the burden on the UI thread.\n\nPoets Kingdom features a lot of tailored business logic to ensure its fluidity. I crafted algorithms and manipulated efficient data structures to ensure correctness and speed in the application. For example, a poem and a poem theme are conceptualised into an XML file. Each time a poem is loaded, its corresponding poem theme XML file is loaded and displayed. A poem theme describes how the poem looks. A poem is the actual text in itself.\n\nPoets Kingdom is a unique application with unique requirements and showcases translating conceptualisation into code. I strongly recommend looking into its internal workings.",
+    "projectLink" : [
+      {
+        "url" : "https://github.com/tinochings/PoetsKingdom/blob/master/app/Debug%20APK/app-debug.apk",
+        "label" : "Download Poets Kingdom",
+        "urlText" : "Poets Kingdom Application Download"
+      },
+      {
+        "url" : "https://github.com/tinochings/PoetsKingdom",
+        "label" : "Poets Kingdom Source Code",
+        "urlText" : "Poets Kingdom Source Code"
+      }
+    ]
+  },
+  {
+    "projectId": "zvevatsunga",
+    "projectName": "Zvevatsunga Steel & Plumbing (Full Stack Web App)",
+    "projectImages": [
+      {
+        "firstImage": "/images/projectsDone/zvevatsunga/logo.png",
+        "firstImageAltText": "Zvevatsunga Steel & Plumbing Logo",
+        "secondImage": "/images/projectsDone/zvevatsunga/homepc.png",
+        "secondImageAltText": "Zvevatsunga Steel & Plumbing home page"
+      },
+      {
+        "firstImage": "/images/projectsDone/zvevatsunga/homemobile.png",
+        "firstImageAltText": "Zvevatsunga Steel & Plumbing home page mobile",
+        "secondImage": "",
+        "secondImageAltText": ""
+      }
+    ],
+    "projectAbout" : "Zvevatsunga Steel & Plumbing is a company dedicated to delivering high-quality products and services to the construction and plumbing industry.",
+    "projectDescription" : "Zvevatsunga Steel & Plumbing is a website I designed with Adobe Illustrator and created using Bootstrap, HTML5, Thymeleaf, JavaScript, and native CSS for the front end. For the server, I used the Spring Boot framework with Java as the primary language of coding. The server consists of a PostgreSQL database, rate limiting, caching, and an email service.\n\nThis project consisted of three phases: modelling, translating the model to software, and testing. I used UML to model the database schema, state transitions, and client-server communication. The web client was designed and made to be accessible. It featured an aesthetically pleasing, responsive and intuitive user interface. Furthermore, the web client was made with a mobile-first approach.\n\nThe server featured session management, secure account creation, secure administrator communication, rate-limiting post requests, cross-site request forgery protection, a secure ordering process, in-heap caching, efficient database management, and a safe multi-threaded environment.",
+    "projectLink" : []
+  },
+  {
+    "projectId": "trinmedia",
+    "projectName": "Trin Media ",
+    "projectImages": [
+      {
+        "firstImage": "/images/projectsDone/trinmedia/logo.png",
+        "firstImageAltText": "Trin Media Logo",
+        "secondImage": "/images/projectsDone/trinmedia/homepc.png",
+        "secondImageAltText": "Trin media home page pc"
+      },
+      {
+        "firstImage": "/images/projectsDone/trinmedia/homemobile.png",
+        "firstImageAltText": "Trin Media home page mobile",
+        "secondImage": "/images/projectsDone/trinmedia/homepc.png",
+        "secondImageAltText": "Trin media learn section pc"
+      }
+    ],
+    "projectAbout" : "",
+    "projectDescription" : "Trin Media website is a website I created using Bootstrap, HTML5, JavaScript, and native CSS for the front end. The website was designed by Trin Media itself. I translated the design template and guidelines into production-grade software. I worked closely with the head designer of Trin Media in order to achieve the most optimal result. \n\nThe server was programmed in Java using the Spring Boot framework. The server consisted of form validation, rate-limiting, static resource caching, and a multi-threaded email service.",
+    "projectLink" : []
+  },
+  {
+    "projectId": "madzinza",
+    "projectName": "Madzinza",
+    "projectImages": [
+      {
+        "firstImage": "/images/projectsDone/madzinza/logo.png",
+        "firstImageAltText": "Madzinza Logo",
+        "secondImage": "/images/projectsDone/madzinza/totems.png",
+        "secondImageAltText": "Madzinza totems page"
+      }
+    ],
+    "projectAbout" : "",
+    "projectDescription" : "My first solo project. The design, functionality, translation, and text input into the application were all done by myself. Grown out of the frustration of the lack of Zimbabwean history documentation, I took it upon myself to encapsulate all credible information I could find digitally. It was a side project I started during the end-of-year break in my second year of university. I was a codehead eager to start a project by myself. I believed I had the skills to make an Android application, so I went on to do it. Madzinza was written in Java. It entails various custom algorithms I had to make to ensure a pleasing user experience. Madzinza Application was a passion project. I am dedicated to working on more projects like this one.",
+    "projectLink" : []
+  }
+]
