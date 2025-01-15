@@ -10,7 +10,7 @@
     </parent>
     <groupId>tinotendachingwena.website</groupId>
     <artifactId>tinotenda</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Tinotenda Chingwena Website Server</name>
     <description>Tinotenda Chingwenas website</description>
     <url/>

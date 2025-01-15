@@ -5,11 +5,12 @@
 		<parent>
 		<groupId>tinotendachingwena.website</groupId>
 		<artifactId>tinotendachingwena</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
+		<relativePath/>
 	</parent>
 	<artifactId>frontend</artifactId>
 	<groupId>tinotendachingwena.website</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	
 	
     <build>
