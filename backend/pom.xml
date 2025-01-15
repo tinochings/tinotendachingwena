@@ -121,7 +121,7 @@
                             <outputDirectory>${project.basedir}/target/classes/static</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${project.parent.basedir}/frontend/build</directory>
+                                    <directory>../frontend/build</directory>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>
