@@ -4,9 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 		<parent>
 		<groupId>tinotendachingwena.website</groupId>
-		<artifactId>tinotendachingwena</artifactId>
+		<artifactId>tinotenda-chingwena-website</artifactId>
 		<version>1.0.0</version>
-		<relativePath/>
 	</parent>
 	<artifactId>frontend</artifactId>
 	<groupId>tinotendachingwena.website</groupId>
