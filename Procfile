@@ -1,1 +1,1 @@
-web: java -jar -DEMAIL_SENDER=$EMAIL_SENDER -DEMAIL_SENDER_PASSWORD=$EMAIL_SENDER_PASSWORD backend/target/tinotenda-1.0.0.jar
+web: java -jar -DEMAIL_SENDER=$EMAIL_SENDER -DPASSWORD=$PASSWORD -Dserver.port=$PORT $JAVA_OPTS backend/target/tinotenda-1.0.0.jar
