@@ -14,7 +14,7 @@ export default function Home({ language = "en" }) {
   let languageResourceObject = language === "en" ? enresource : snresource;
   return (
     <>
-      <MetaData title={metaDataResourceHome.title} description={metaDataResourceHome.description}/>
+      <MetaData title={metaDataResourceHome.title} description={metaDataResourceHome.description} canonical={languageResourceObject.canonical}/>
       <IntroductionSection languageResource={languageResourceObject} />
       <CurriculumnVitae language={language} />
     </>

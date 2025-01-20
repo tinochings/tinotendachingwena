@@ -21,7 +21,7 @@ export const snresource = {
     sei pa`,
     statement3: ` Mukatarisa pazasi apo munoona mufananidzo wangu`,
     engineeringStatement: `Kunatsisa kudavadisa kweSoftware Engineering:`  ,
-
+    canonical: "/"
 }
 
 export const experienceResourceSn = {
@@ -30,7 +30,8 @@ export const experienceResourceSn = {
     retrievalError: 'Ruzivo rwakonewa kuturunurwa',
     retrievalErrorResponse: `Webusaiti haina kukwanisa kuturunura ruzivo rwenhoroondo nechikonzero chinotevera:`,
     alertLeft : "Turunura zvakare",
-    alertRight: "Dzokerai pekutanga"
+    alertRight: "Dzokerai pekutanga",
+    canonical: "/en/experiences"
 }
 
 export const contactResourceSn = {
@@ -42,5 +43,6 @@ export const contactResourceSn = {
     contactText: `Pane zveku gadzira mashandamurunhare ndinobatika nguva dzose. Ndibatei paka kurerukirai:`,
     failedNotificationText: `Shoko renyu harina kukwanisa kutumirwa kwandiri. Dambudziko iri rikaramba riripo nditumirei email paemail address inoti: 
                     tinotendachings@gmail.com`,
-    networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare."
+    networkFailure: "Paitika dambudziko nemasaisai. Tarisai kuti masaisai enyu ari kushanda zvakanaka uye zve muedze zvakare.",
+     canonical: "/en/contact"
 }

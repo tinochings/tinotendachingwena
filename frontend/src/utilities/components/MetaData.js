@@ -1,5 +1,5 @@
 
-export default function MetaData({ title, description }) {
+export default function MetaData({ title, description, canonical=""}) {
     return (
         <>
             <meta
@@ -11,6 +11,7 @@ export default function MetaData({ title, description }) {
             {description !== undefined ? <meta name="description" content={description} /> : <meta name="description" content={title} />}
             <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon" sizes="any" />
             <link rel="apple-touch-icon" href="/images/favicon/favicon.ico" />
+            {canonical !== "" ? <link rel="canonical" href={`https://www.tinotendachingwena.com${canonical}`} /> : <> </>}
             <title>{title}</title>
         </>
     );

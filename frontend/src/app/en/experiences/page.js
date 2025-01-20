@@ -29,7 +29,7 @@ export default function Experiences({ language = "en" }) {
 
     return (
         <>
-        <MetaData title={metaDataResourceExperiences.title} description={metaDataResourceExperiences.description}/>
+        <MetaData title={metaDataResourceExperiences.title} description={metaDataResourceExperiences.description} canonical={languageResourceObject.canonical}/>
         <ViewStateToDisplay currentDisplayState={currentDisplayState} sectionData={sectionDataList} languageObject={languageResourceObject} />
         </>
     );

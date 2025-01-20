@@ -21,7 +21,7 @@ export const enresource = {
                 found at`,
     statement3: ` Hey! Look below it's me :)`,
     engineeringStatement: `Perfecting the art of Software Engineering:`  ,
-
+    canonical: ""
 }
 
 export const experienceResource = {
@@ -31,6 +31,7 @@ export const experienceResource = {
     retrievalErrorResponse: `An error occurred whilst trying to receive experiences information. The error status code observed is:`,
     alertLeft : "Reload Page",
     alertRight: "Return Home",
+    canonical: ""
 }
 
 export const contactResource = {
@@ -42,5 +43,6 @@ export const contactResource = {
     contactText: `I am available for all software related opportunities. Feel free to contact me where it conveniences you:`,
     failedNotificationText: `Unfortunately, your request could not be sent. If the problem persists, kindly email me on: 
                     tinotendachings@gmail.com`,
-    networkFailure: "A network error was encountered. Check your internet connectivity and try again."
+    networkFailure: "A network error was encountered. Check your internet connectivity and try again.",
+    canonical: ""
 }

@@ -13,7 +13,7 @@ export default function Contact({ language = "en" }) {
 
     return (
         <>
-        <MetaData title={metaDataResourceContact.title} description={metaDataResourceContact.description}/>
+        <MetaData title={metaDataResourceContact.title} description={metaDataResourceContact.description} canonical={languageResourceObject.canonical}/>
         <main>
             <Container>
                 <h1 id={`${contactStyle.headerText}`}>{languageResourceObject.statementMessage}</h1>
